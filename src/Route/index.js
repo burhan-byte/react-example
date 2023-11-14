@@ -1,7 +1,7 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Login1 from "../Page/Login1";
-import Login2 from "../Page/Login2";
+import Login2 from "../Page/Login222";
 
 export default function RoutePage() {
   return (
