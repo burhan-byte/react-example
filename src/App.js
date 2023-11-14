@@ -1,8 +1,6 @@
-
 import RoutePage from "./Route";
-
 function App() {
-  return (<RoutePage />)
-
+  return (<RoutePage />
+  )
 }
 export default App;
