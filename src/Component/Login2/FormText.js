@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 
 const FormText = () => {
+
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,13 +32,13 @@ const FormText = () => {
       setPasswordColor('red');
     }
   };
-
-  return (
+  return (  
     <div className="container">
       <form className="form" onSubmit={validateForm}>
-        <h2>Hi, Welcome to BPL PATHOLOGIST </h2>
+        <h2>Hi, Welcome to BPL PATHOLOGIST</h2>
+        <h2>Enter your crddentials to continue</h2>
         <div className="form-control">
-          <label>ชื่อผู้ใช้</label>
+          <label>Username</label>
           <input
             type="text"
             value={userName}
@@ -47,7 +48,7 @@ const FormText = () => {
           <small style={{ color: userNameColor }}>{errorUserName}</small>
         </div>
         <div className="form-control">
-          <label>รหัสผ่าน</label>
+          <label>Password</label>
           <input
             type="password"
             value={password}
@@ -57,7 +58,7 @@ const FormText = () => {
           <small style={{ color: passwordColor }}>{errorPassword}</small>
         </div>
         <Button type="submit" variant="contained" color="primary">
-          ลงทะเบียน
+          SIGN IN
         </Button>
       </form>
     </div>
