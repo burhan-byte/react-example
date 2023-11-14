@@ -1,7 +1,10 @@
 import './FormText'
 import {useState} from "react"
 import "./FormText.css"
-import AccountBoxIcon from '@mui/icons-material/AccountBox';
+
+
+
+
 
 const FormText = ()=>{
     const [userName,setUserName] = useState('')
@@ -63,10 +66,11 @@ const FormText = ()=>{
 
 
     return(
+        
         <div className="container">
             <form className="form" onSubmit={validateForm}>
                 <h2 className='text-center'>Hi,Welcome to BPL LAB ONLINE</h2>
-                <h2 className='text-center'>Enter your credentials to continue</h2>
+                <h3 className='text-center'>Enter your credentials to continue</h3>
                 <div className="form-control">
                 <label variant="UserName"></label>
                 <input type="username" placeholder='User Name'  onChange={(e)=>setUserName(e.target.value)} style={{borderColor:userNameColor}}/>
