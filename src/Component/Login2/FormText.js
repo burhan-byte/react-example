@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Button from '@mui/material/Button';
 
 const FormText = () => {
+
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
 
@@ -31,8 +32,7 @@ const FormText = () => {
       setPasswordColor('red');
     }
   };
-
-  return (
+  return (  
     <div className="container">
       <form className="form" onSubmit={validateForm}>
         <h2>Hi, Welcome to BPL PATHOLOGIST</h2>
