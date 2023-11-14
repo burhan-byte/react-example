@@ -4,6 +4,7 @@ import {useState} from "react"
 import "./FormText.css"
 
 
+
 const FormText = ()=>{
     const [userName,setUserName] = useState('')
     // const [email,setEmail] = useState('')
@@ -64,7 +65,6 @@ const FormText = ()=>{
 
 
     return(
-        
         <div className="container">
             <form className="form" onSubmit={validateForm}>
                 <h2 className='text-center'>Hi,Welcome to BPL LAB ONLINE</h2>
@@ -92,8 +92,8 @@ const FormText = ()=>{
                 <button type="submit">SIGN IN</button>
 
             </form>
-           
-        </div>
+            </div>
+        
     )
 
 }

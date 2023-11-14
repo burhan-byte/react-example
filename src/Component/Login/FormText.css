@@ -8,7 +8,7 @@ body{
     justify-content: Top;
     margin: 0;
     min-height: 100vh;
-    background: #e7d5d5;
+    background: #f1e8e8;
 }
 .container{
     background: #fafafa;
@@ -22,12 +22,11 @@ body{
 ้h2{
     text-align: center;
     margin: 0 0 0 30px;
-    font-size: 10px;
 }
+
 ้h3{
     text-align: center;
     margin: 0 0 0 10px;
-    font-size: 1px;
 }
 
 .form-control{
@@ -53,7 +52,7 @@ body{
 }*/
 
 .form button{
-    background: rgb(226, 96, 215);
+    background: rgb(198, 38, 230);
     cursor: pointer;
     color: #f2f2f2;
     width: 100%;
