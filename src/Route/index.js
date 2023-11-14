@@ -3,6 +3,9 @@ import { Route, Routes } from "react-router-dom";
 import Login1 from "../Page/Login1";
 import Login2 from "../Page/Login222";
 
+
+
+
 export default function RoutePage() {
   return (
     <Routes>
@@ -11,3 +14,6 @@ export default function RoutePage() {
     </Routes>
   );
 }
+
+
+
