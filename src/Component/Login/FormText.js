@@ -1,9 +1,7 @@
+import React from "react";
 import './FormText'
 import {useState} from "react"
 import "./FormText.css"
-
-
-
 
 
 const FormText = ()=>{
