@@ -1,8 +1,11 @@
-import React from 'react'
-import './FormComponent.css'
+import { Chip } from "@mui/material";
+import React from "react";
+import FormText from "../Component/Login/FormText";
 
 export default function Login1() {
   return (
-    <div>Login1</div>
-  )
+    <div>
+     <FormText/>
+    </div>
+  );
 }

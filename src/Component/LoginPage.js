@@ -1,5 +1,5 @@
 import React from 'react'
-import FormText from './FormText'
+// import FormText from './Login2/FormText'
 
 const Login = () => {
   return (
