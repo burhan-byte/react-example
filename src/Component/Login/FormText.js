@@ -249,70 +249,70 @@
 
 
 
-import React, { useState } from 'react';
-import { Grid, Paper, TextField, Button, Typography, Box } from '@mui/material';
+// import React, { useState } from 'react';
+// import { Grid, Paper, TextField, Button, Typography, Box } from '@mui/material';
 
-export default function FormText() {
-  const spacing = 2; // Assuming you have defined spacing
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+// export default function FormText() {
+//   const spacing = 2; // Assuming you have defined spacing
+//   const [username, setUsername] = useState('');
+//   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // Handle login logic here
-    console.log('Logging in with:', username, password);
-  };
+//   const handleLogin = () => {
+//     // Handle login logic here
+//     console.log('Logging in with:', username, password);
+//   };
 
-  return (
+//   return (
     
-        <div>
-          <Grid container direction="row" justifyContent="center" alignItems="center">
+//         <div>
+//           <Grid container direction="row" justifyContent="center" alignItems="center">
            
-                <Paper elevation={0} 
-                ฒฬxs={12} md={6} 
-                sx={{
-                  padding: 2,
-                  textAlign: 'center',
-                  backgroundColor: '#ffff',
-                  borderRadius: 'px',
-                }}
-              >
+//                 <Paper elevation={0} 
+//                 ฒฬxs={12} md={6} 
+//                 sx={{
+//                   padding: 2,
+//                   textAlign: 'center',
+//                   backgroundColor: '#ffff',
+//                   borderRadius: 'px',
+//                 }}
+//               >
           
-                <Typography variant='h5'>Hi,Welcome to BPL PATHOLOGIST</Typography>
-                <form>
-                  <TextField
-                    label="Username"
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                  />
-                  <TextField
-                    label="Password"
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                  />
-                  <Button variant="contained" color="primary" onClick={handleLogin}>
-                    Login
-                  </Button>
-                </form>
-              </Paper>
+//                 <Typography variant='h5'>Hi,Welcome to BPL PATHOLOGIST</Typography>
+//                 <form>
+//                   <TextField
+//                     label="Username"
+//                     variant="outlined"
+//                     margin="normal"
+//                     fullWidth
+//                     value={username}
+//                     onChange={(e) => setUsername(e.target.value)}
+//                   />
+//                   <TextField
+//                     label="Password"
+//                     variant="outlined"
+//                     margin="normal"
+//                     fullWidth
+//                     value={password}
+//                     onChange={(e) => setPassword(e.target.value)}
+//                   />
+//                   <Button variant="contained" color="primary" onClick={handleLogin}>
+//                     Login
+//                   </Button>
+//                 </form>
+//               </Paper>
 
                 
             
          
             
-              </Grid>
+//               </Grid>
       
-        </div>
+//         </div>
         
       
   
-  );
-}
+//   );
+// }
 
 
 
@@ -320,3 +320,101 @@ export default function FormText() {
 
 
 
+// import React, { useState } from 'react';
+// import Avatar from '@material-ui/core/Avatar';
+// import Button from '@material-ui/core/Button';
+// import CssBaseline from '@material-ui/core/CssBaseline';
+// import TextField from '@material-ui/core/TextField';
+// import Paper from '@material-ui/core/Paper';
+// import Grid from '@material-ui/core/Grid';
+// import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
+// import Typography from '@material-ui/core/Typography';
+// import { makeStyles } from '@material-ui/core/styles';
+// import swal from 'sweetalert';
+
+// const useStyles = makeStyles((theme) => ({
+//   // ... (your existing styles)
+// }));
+
+// const FormText = () => {
+//   const classes = useStyles();
+//   const [username, setUserName] = useState('');
+//   const [password, setPassword] = useState('');
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     // Assuming lo() is a function for making an authentication request
+//     const response = await lo({
+//       username,
+//       password,
+//     });
+
+//     if ('accessToken' in response) {
+//       swal("Success", response.message, "success", {
+//         buttons: false,
+//         timer: 2000,
+//       }).then((value) => {
+//         localStorage.setItem('accessToken', response['accessToken']);
+//         localStorage.setItem('user', JSON.stringify(response['user']));
+//         window.location.href = "/profile";
+//       });
+//     } else {
+//       swal("Failed", response.message, "error");
+//     }
+//   };
+
+//   return (
+//     <Grid container className={classes.root}>
+//       <CssBaseline />
+//       <Grid item xs={false} md={7} className={classes.image} />
+//       <Grid item xs={12} md={5} component={Paper} elevation={6} square>
+//         <div className={classes.paper}>
+//           <Avatar className={classes.avatar}>
+//             <LockOutlinedIcon />
+//           </Avatar>
+//           <Typography component="h1" variant="h5">
+//             Sign in
+//           </Typography>
+//           <form className={classes.form} noValidate onSubmit={handleSubmit}>
+//             <TextField
+//               variant="outlined"
+//               margin="normal"
+//               required
+//               fullWidth
+//               id="username"
+//               label="Email Address"
+//               name="email"
+//               autoComplete="username"
+//               value={username}
+//               onChange={(e) => setUserName(e.target.value)}
+//             />
+//             <TextField
+//               variant="outlined"
+//               margin="normal"
+//               required
+//               fullWidth
+//               id="password"
+//               label="Password"
+//               name="password"
+//               type="password"
+//               autoComplete="current-password"
+//               value={password}
+//               onChange={(e) => setPassword(e.target.value)}
+//             />
+//             <Button
+//               type="submit"
+//               fullWidth
+//               variant="contained"
+//               color="primary"
+//               className={classes.submit}
+//             >
+//               Sign In
+//             </Button>
+//           </form>
+//         </div>
+//       </Grid>
+//     </Grid>
+//   );
+// };
+
+// export default FormText;
