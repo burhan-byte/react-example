@@ -1,10 +1,14 @@
 import React from "react";
 import Login2 from "./Page/Login222";
-import Login2 from "./Page/Login222";
+
 
 function App() {
-  return (
-  <Login2/>
-  )
-}
+  return ( 
+  <div className="container">
+    <Login2>
+    </Login2>
+  </div>
+  
+  );
+};
 export default App;
