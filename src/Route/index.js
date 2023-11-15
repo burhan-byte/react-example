@@ -11,6 +11,7 @@ export default function RoutePage() {
     <Routes>
       <Route path="/" element={<Login1 />} />
       <Route path="/login2" element={<Login2 />} />
+      
     </Routes>
   );
 }
