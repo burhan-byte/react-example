@@ -1,21 +1,25 @@
-import './Login.css';
-import { useState } from 'react';
+// FormText.js
+
+// Import necessary libraries and components
+import React, { useState } from 'react';
 import Button from '@mui/material/Button';
+import './Login.css';
 
+// Define the FormText component
 const FormText = () => {
-
+  // Define state variables for username, password, and their respective errors and colors
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
-
   const [errorUserName, setErrorUserName] = useState('');
   const [errorPassword, setErrorPassword] = useState('');
-
   const [userNameColor, setUserNameColor] = useState('');
   const [passwordColor, setPasswordColor] = useState('');
 
+  // Define the form validation function
   const validateForm = (e) => {
     e.preventDefault();
 
+    // Validate username
     if (userName.length > 8) {
       setErrorUserName('');
       setUserNameColor('green');
@@ -24,6 +28,7 @@ const FormText = () => {
       setUserNameColor('red');
     }
 
+    // Validate password
     if (password.length > 8) {
       setErrorPassword('');
       setPasswordColor('green');
@@ -32,11 +37,14 @@ const FormText = () => {
       setPasswordColor('red');
     }
   };
-  return (  
+
+  // Render the form component
+  return (
     <div className="container">
       <form className="form" onSubmit={validateForm}>
         <h2>Hi, Welcome to BPL PATHOLOGIST</h2>
-        <h2>Enter your crddentials to continue</h2>
+        <h2>Enter your credentials to continue</h2>
+        {/* Username input field */}
         <div className="form-control">
           <label>Username</label>
           <input
@@ -47,6 +55,7 @@ const FormText = () => {
           />
           <small style={{ color: userNameColor }}>{errorUserName}</small>
         </div>
+        {/* Password input field */}
         <div className="form-control">
           <label>Password</label>
           <input
@@ -57,6 +66,7 @@ const FormText = () => {
           />
           <small style={{ color: passwordColor }}>{errorPassword}</small>
         </div>
+        {/* Submit button */}
         <Button type="submit" variant="contained" color="primary">
           SIGN IN
         </Button>
@@ -65,4 +75,5 @@ const FormText = () => {
   );
 };
 
+// Export the FormText component
 export default FormText;

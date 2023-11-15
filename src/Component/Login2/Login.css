@@ -8,14 +8,17 @@ body {
   justify-content: center;
   margin: 0;
   min-height: 100vh;
-  background: #f5ecec;
+  background: #eaacac;
 }
 
 .container {
+  display: flex;
   background: #fff;
   border-radius: 5px;
   box-shadow: 0 2px 10px rgb(0, 0, 0, 0.3);
   width: 400px;
+  min-height: 500px;
+  min-height: 500vh;
 }
 
 .form {
@@ -63,5 +66,4 @@ h1 {
   padding: 10px;
   font-size: 16px;
 }
-
 
