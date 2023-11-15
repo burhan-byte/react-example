@@ -1,10 +1,7 @@
 import React from "react";
-import Login2 from "./Page/Login222";
-import Login2 from "./Page/Login222";
+import RoutePage from "./Route/index";
 
 function App() {
-  return (
-  <Login2/>
-  )
+  return <RoutePage />;
 }
 export default App;
