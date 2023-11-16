@@ -2,7 +2,7 @@ import { Chip } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import FormText from "../Component/Login2/FormText";
 import axios from "axios";
-
+import Home from "../Component/Login2/Home";
 
 export default function Login2() {
   const [user , setUser] = useState([]);
