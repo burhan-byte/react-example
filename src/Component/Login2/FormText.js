@@ -82,8 +82,10 @@
 import React, { useState } from 'react';
 import { Grid, Paper, TextField, Button, Typography, InputAdornment, IconButton } from '@mui/material';
 import { Visibility, VisibilityOff, AccountCircle,} from '@mui/icons-material';
+import { useNavigate } from 'react-router-dom';
 
 const FormText = () => {
+  const navigate =useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorUserName, setErrorUserName] = useState('');
@@ -91,25 +93,40 @@ const FormText = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
-    // Handle login logic here
-    console.log('Logging in with:', username, password);
-    // Optionally, you can include the following to clear the form after login
-    setUsername('');
-    setPassword('');
 
-    // Validate username
-    if (username.length > 8) {
-      setErrorUserName('');
-    } else {
-      setErrorUserName('Enter a username with more than 8 characters');
-    }
+// console.log(username);
+// console.log(password);
+if(username==="test" && password==="test"){
+console.log("tes")
+localStorage.setItem('laila',1)
+navigate("/home")
+}else{
+console.log("nema")
+}
 
-    // Validate password
-    if (password.length > 10) {
-      setErrorPassword('');
-    } else {
-      setErrorPassword('Enter a password with more than 10 characters');
-    }
+
+
+
+
+    // // Handle login logic here
+    // console.log('Logging in with:', username, password);
+    // // Optionally, you can include the following to clear the form after login
+    // setUsername('');
+    // setPassword('');
+
+    // // Validate username
+    // if (username.length > 8) {
+    //   setErrorUserName('');
+    // } else {
+    //   setErrorUserName('Enter a username with more than 8 characters');
+    // }
+
+    // // Validate password
+    // if (password.length > 10) {
+    //   setErrorPassword('');
+    // } else {
+    //   setErrorPassword('Enter a password with more than 10 characters');
+    // }
   };
 
   return (
@@ -119,7 +136,7 @@ const FormText = () => {
           sx={{
             padding: 2,
             textAlign: 'center',
-            backgroundColor: '#fff',
+            backgroundColor: '#ffff',
             borderRadius: '5px',
             display: 'flex',
             flexDirection: 'column',
