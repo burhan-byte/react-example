@@ -97,11 +97,11 @@ const FormText = () => {
 // console.log(username);
 // console.log(password);
 if(username==="test" && password==="test"){
-console.log("tes")
-localStorage.setItem('laila',1)
+console.log("test")
+localStorage.setItem('token',1)
 navigate("/home")
 }else{
-console.log("nema")
+console.log("fail")
 }
 
 
