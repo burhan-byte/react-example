@@ -198,7 +198,7 @@ console.log("fail")
       <Grid item xs={12} md={6} lg={5}>
         {/* Content for the second column goes here */}
         <img
-          src="https://images.unsplash.com/photo-1502657877623-f66bf489d236?auto=format&fit=crop&w=800"
+          src= "https://www.สอบเทียบเครื่องมือแพทย์.com/images/content/original-1465153121899.png"
           alt="A beautiful landscape"
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
         />

@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { TextField, Box, Radio, FormControlLabel, RadioGroup } from '@mui/material';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -7,54 +8,71 @@ export default function Home() {
     useEffect(() => {
         const token = localStorage.getItem('token');
         
-        if (token === "1") {
-            console.log("Login");
-        } else { 
+        if (token !== "1") {
             console.log("fail");
             navigate("/login2");
         }
-    }, []);
+    }, [navigate]);
 
     const logout = () => {
         localStorage.removeItem('token');
         navigate("/login2");
     };
 
-    const centerText = {
-        textAlign: 'center',
-        margin: '5px 0', // Add margin between paragraphs
-    };
+    const [selectedValue, setSelectedValue] = useState('');
 
-    const horizontalLayout = {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexWrap: 'wrap',
-    };
-
-
-    const paragraphStyle = {
-        ...centerText,
-        margin: '0 10px', // Adjust the horizontal spacing between paragraphs
+    const handleChange = (event) => {
+        setSelectedValue(event.target.value);
     };
 
     return (
-        <div>
-            <h1 style={centerText}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h1>
-            <div style={horizontalLayout}>
-                <p style={paragraphStyle}>โรงพยาบาล</p>
-                <p style={paragraphStyle}>จังหวัด</p>
-                <p style={paragraphStyle}>วันที่ปฏิบัติงาน</p>
-                <p style={paragraphStyle}>เดือน</p>
-                <p style={paragraphStyle}>ปี</p>
-            </div>
-            <div style={horizontalLayout}>
-                <p style={paragraphStyle}>วันที่ติดตั้ง</p>
-                <p style={paragraphStyle}>เดือน</p>
-                <p style={paragraphStyle}>ปี</p>
-            </div>
-            <button onClick={logout}>Log out</button>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <h1 style={{ textAlign: 'center', margin: '5px 0' }}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h1>
+            <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}
+            >
+                <TextField id="outlined-basic1" label="โรงพยาบาล" variant="outlined" />
+                <TextField id="filled-basic1" label="จังหวัด" variant="filled" />
+                <TextField id="outlined-basic2" label="วันที่เข้าปฏิบัติงาน" variant="outlined" />
+                <TextField id="filled-basic2" label="เดือน" variant="filled" />
+                <TextField id="outlined-basic3" label="ปี" variant="outlined" />
+                {/* Add more text fields as needed */}
+            </Box>
+            <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 1, width: '25ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}
+            >
+                <TextField id="outlined-basic4" label="ติดตั้งครั้งแรก" variant="outlined" />
+                <TextField id="filled-basic3" label="Service" variant="filled" />
+
+                {/* Radio buttons */}
+                <RadioGroup
+                    aria-label="gender"
+                    name="gender1"
+                    value={selectedValue}
+                    onChange={handleChange}
+                    style={{ display: 'flex', flexDirection: 'row' }}
+                >
+                    <FormControlLabel value="a" control={<Radio />} label="Y" />
+                    <FormControlLabel value="b" control={<Radio />} label="N" />
+                </RadioGroup>
+
+                <TextField id="outlined-basic5" label="วันที่เข้าทำงานครั้งต่อไป เดือน" variant="outlined" />
+                <TextField id="filled-basic4" label="ปี" variant="filled" />
+                <TextField id="outlined-basic6" label="โดย" variant="outlined" />
+            </Box>
+            <button onClick={logout} style={{ marginTop: '10px' }} style={{ backgroundColor: 'Orange' }} >Log out</button>
         </div>
     );
 }
