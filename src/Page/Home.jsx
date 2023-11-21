@@ -27,7 +27,7 @@ export default function Home() {
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h1 style={{ textAlign: 'center', margin: '5px 0' }}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h1>
+            <h2 style={{ textAlign: 'center', margin: '5px 0' }}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h2>
             <Box
                 component="form"
                 sx={{
@@ -53,7 +53,7 @@ export default function Home() {
                 autoComplete="off"
                 style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}
             >
-                <TextField id="outlined-basic4" label="ติดตั้งครั้งแรก" variant="outlined" />
+                <TextField id="outlined-basic4" label="ติดตั้งครั้งเเรก" variant="outlined" />
                 <TextField id="filled-basic3" label="Service" variant="filled" />
 
                 {/* Radio buttons */}
@@ -72,7 +72,23 @@ export default function Home() {
                 <TextField id="filled-basic4" label="ปี" variant="filled" />
                 <TextField id="outlined-basic6" label="โดย" variant="outlined" />
             </Box>
-            <button onClick={logout} style={{ marginTop: '10px' }} style={{ backgroundColor: 'Orange' }} >Log out</button>
+            <Box>
+            <RadioGroup
+                    aria-label="gender"
+                    name="gender1"
+                    value={selectedValue}
+                    onChange={handleChange}
+                    style={{ display: 'flex', flexDirection: 'row' }}
+                >
+                    <FormControlLabel value="c" control={<Radio />} label="HOSxP" />
+                    <FormControlLabel value="d" control={<Radio />} label="HospitalIOS" />
+                    <FormControlLabel value="e" control={<Radio />} label="Other" />
+                    <TextField id="outlined-basic6" label="LIS" variant="outlined" />
+                    <FormControlLabel value="f" control={<Radio />} label="Gateway" />
+                    <FormControlLabel value="g" control={<Radio />} label="None Gateway" />
+                </RadioGroup> 
+            </Box>
+            <button onClick={logout} style={{ marginTop: '10px' }}  >Log out</button>
         </div>
     );
 }

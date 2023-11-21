@@ -198,14 +198,14 @@ console.log("fail")
       <Grid item xs={12} md={6} lg={5}>
         {/* Content for the second column goes here */}
         <img
-          src= "https://www.สอบเทียบเครื่องมือแพทย์.com/images/content/original-1465153121899.png"
+          src= "https://www.eeci.or.th/wp-content/uploads/2021/07/09-Medical-Devices_1.png"
           alt="A beautiful landscape"
           style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
         />
         <Typography variant="h5" gutterBottom style={{ textAlign: 'center', marginTop: '20px' }}>
           Hi, Welcome
         </Typography>
-        <Typography variant="h5" gutterBottom style={{ textAlign: 'center' }}>
+        <Typography variant="h6" gutterBottom style={{ textAlign: 'center' }}>
           Hi, Welcome back. Enter your credentials to continue
         </Typography>
       </Grid>
