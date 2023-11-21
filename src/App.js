@@ -1,7 +1,9 @@
-import RoutePage from "./Route";
+import React from "react";
+import RoutePage from "./Route/index";
 
 function App() {
-  return <RoutePage />;
+  return ( 
+  <RoutePage/>
+  )
 }
-
 export default App;
