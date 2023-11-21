@@ -103,11 +103,6 @@ navigate("/home")
 }else{
 console.log("fail")
 }
-
-
-
-
-
     // // Handle login logic here
     // console.log('Logging in with:', username, password);
     // // Optionally, you can include the following to clear the form after login
@@ -209,7 +204,6 @@ console.log("fail")
           Hi, Welcome back. Enter your credentials to continue
         </Typography>
       </Grid>
-      
     </Grid>
   );
 };
