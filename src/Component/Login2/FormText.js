@@ -85,7 +85,7 @@ import { Visibility, VisibilityOff, AccountCircle,} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
 const FormText = () => {
-  const navigate =useNavigate();
+  const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorUserName, setErrorUserName] = useState('');
