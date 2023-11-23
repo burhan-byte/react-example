@@ -496,6 +496,7 @@ import { Grid, Paper, TextField, Button, Typography, InputAdornment, IconButton 
 import { Visibility, VisibilityOff, AccountCircle,} from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
+
 const FormText = () => {
   const navigate =useNavigate();
   const [username, setUsername] = useState('');
@@ -504,6 +505,9 @@ const FormText = () => {
   const [errorPassword, setErrorPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
 
+  
+
+
   const handleLogin = () => {
 
 // console.log(username);
@@ -511,13 +515,13 @@ const FormText = () => {
 if(username==="Nurda" && password==="1234"){
 console.log("Nurda")
 localStorage.setItem('token',1)
-navigate("/home")
+navigate("/Sing")
 }else{
 console.log("fail")
 }
 
   };
-
+  
   return (
     <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
       <Grid item xs={12} md={6} lg={5}>

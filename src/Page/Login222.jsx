@@ -18,7 +18,7 @@ export default function Login2() {
 //     })
 // },[]);
 
-// console.log(user)
+console.log(user)
 
 
   return (
