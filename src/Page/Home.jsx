@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 
 export default function Home() {
     const navigate = useNavigate();
-    const [hospitalName, setHospitalName] = useState('');
+    const [hospitalName, setHospitalName] = useState([]);
     const [province, setProvince] = useState('');
 
     useEffect(() => {
@@ -58,8 +58,8 @@ export default function Home() {
     //     alignItems: 'center',
     //     flexWrap: 'wrap',
     // };
-    // const rows = hospitalName
-    // console.log (rows)
+    const rows = hospitalName
+    console.log (rows)
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -177,18 +177,18 @@ export default function Home() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-          <TableCell align="right">user_id</TableCell>
-            <TableCell align="right">email</TableCell>
-            <TableCell align="right">name</TableCell>
-            <TableCell align="right">given_name</TableCell>
-            <TableCell align="right">family_name</TableCell>
-            <TableCell align="right">nickname</TableCell>
-            <TableCell align="right">last_ip</TableCell>
-            <TableCell align="right">logins_count</TableCell>
-            <TableCell align="right">created_at</TableCell>
-            <TableCell align="right">updated_at</TableCell>
-            <TableCell align="right">last_login</TableCell>
-            <TableCell align="right">email_verified</TableCell>
+          <TableCell align="center">user_id</TableCell>
+            <TableCell align="center">email</TableCell>
+            <TableCell align="center">name</TableCell>
+            <TableCell align="center">given_name</TableCell>
+            <TableCell align="center">family_name</TableCell>
+            <TableCell align="center">nickname</TableCell>
+            <TableCell align="center">last_ip</TableCell>
+            <TableCell align="center">logins_count</TableCell>
+            <TableCell align="center">created_at</TableCell>
+            <TableCell align="center">updated_at</TableCell>
+            <TableCell align="center">last_login</TableCell>
+            <TableCell align="center">email_verified</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -200,24 +200,23 @@ export default function Home() {
               <TableCell component="th" scope="row">
                 {i+1}
               </TableCell>
-              <TableCell align="right">{row.user_id}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.given_name}</TableCell>
-              <TableCell align="right">{row.family_name}</TableCell>
-              <TableCell align="right">{row.nickname}</TableCell>
-              <TableCell align="right">{row.logins_count}</TableCell>
-              <TableCell align="right">{row.created_at}</TableCell>
-              <TableCell align="right">{row.updated_at}</TableCell>
-              <TableCell align="right">{row.last_login}</TableCell>
-              <TableCell align="right">{row.email_verified}</TableCell>
+              <TableCell align="center">{row.user_id}</TableCell>
+              <TableCell align="center">{row.email}</TableCell>
+              <TableCell align="center">{row.name}</TableCell>
+              <TableCell align="center">{row.given_name}</TableCell>
+              <TableCell align="center">{row.family_name}</TableCell>
+              <TableCell align="center">{row.nickname}</TableCell>
+              <TableCell align="center">{row.logins_count}</TableCell>
+              <TableCell align="center">{row.created_at}</TableCell>
+              <TableCell align="center">{row.updated_at}</TableCell>
+              <TableCell align="center">{row.last_login}</TableCell>
+              <TableCell align="center">{row.email_verified}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
             </Box>
-            
             <button onClick={logout} style={{ marginTop: '10px' }}  >Log out</button>
         </div>
     );
