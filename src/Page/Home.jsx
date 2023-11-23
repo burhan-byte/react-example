@@ -13,7 +13,7 @@ import Paper from '@mui/material/Paper';
 
 export default function Home() {
     const navigate = useNavigate();
-    const [hospitalName, setHospitalName] = useState('');
+    const [hospitalName, setHospitalName] = useState([]);
     const [province, setProvince] = useState('');
 
     useEffect(() => {
@@ -58,8 +58,8 @@ export default function Home() {
     //     alignItems: 'center',
     //     flexWrap: 'wrap',
     // };
-    // const rows = hospitalName
-    // console.log (rows)
+    const rows = hospitalName
+    console.log (rows)
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

@@ -4,6 +4,7 @@ import Login1 from "../Page/Login1";
 import Login2 from "../Page/Login222";
 import Home from "../Page/Home";
 import Sing from "../Page/Sing";
+ 
 
 export default function RoutePage() {
   return (
