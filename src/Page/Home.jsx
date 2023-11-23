@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TextField, Box, Radio, FormControlLabel, RadioGroup } from '@mui/material';
+import axios from 'axios';
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
 
 export default function Home() {
     const navigate = useNavigate();
@@ -8,11 +17,13 @@ export default function Home() {
     const [province, setProvince] = useState('');
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
-        setHospitalName('');
-        setProvince(' ');
+        axios.get('http://192.168.101.40:5000/api/test')
+        .then((response)=>{
+            const {data} =response;
+            setHospitalName(data.result);
+        })
 
-    
+        const token = localStorage.getItem('token');
         
         if (token !== "1") {
             console.log("fail");
@@ -39,6 +50,16 @@ export default function Home() {
     const handleProvinceChange = (event) => {
         setProvince(event.target.value);
     };
+
+    // const horizontalLayout = {
+    //     display: 'flex',
+    //     flexDirection: 'row',
+    //     justifyContent: 'center',
+    //     alignItems: 'center',
+    //     flexWrap: 'wrap',
+    // };
+    // const rows = hospitalName
+    // console.log (rows)
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -151,6 +172,52 @@ export default function Home() {
                     <FormControlLabel value="g" control={<Radio />} label="None Gateway" />
                 </RadioGroup> 
             </Box>
+            <Box>
+            <TableContainer component={Paper}>
+      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+          <TableCell align="right">user_id</TableCell>
+            <TableCell align="right">email</TableCell>
+            <TableCell align="right">name</TableCell>
+            <TableCell align="right">given_name</TableCell>
+            <TableCell align="right">family_name</TableCell>
+            <TableCell align="right">nickname</TableCell>
+            <TableCell align="right">last_ip</TableCell>
+            <TableCell align="right">logins_count</TableCell>
+            <TableCell align="right">created_at</TableCell>
+            <TableCell align="right">updated_at</TableCell>
+            <TableCell align="right">last_login</TableCell>
+            <TableCell align="right">email_verified</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row,i) => (
+            <TableRow
+              key={row.user_id}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {i+1}
+              </TableCell>
+              <TableCell align="right">{row.user_id}</TableCell>
+              <TableCell align="right">{row.email}</TableCell>
+              <TableCell align="right">{row.name}</TableCell>
+              <TableCell align="right">{row.given_name}</TableCell>
+              <TableCell align="right">{row.family_name}</TableCell>
+              <TableCell align="right">{row.nickname}</TableCell>
+              <TableCell align="right">{row.logins_count}</TableCell>
+              <TableCell align="right">{row.created_at}</TableCell>
+              <TableCell align="right">{row.updated_at}</TableCell>
+              <TableCell align="right">{row.last_login}</TableCell>
+              <TableCell align="right">{row.email_verified}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
+            </Box>
+            
             <button onClick={logout} style={{ marginTop: '10px' }}  >Log out</button>
         </div>
     );
