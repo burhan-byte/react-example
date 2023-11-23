@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import FormText from "../Component/Login2/FormText";
 import axios from "axios";
 
+
 export default function Login2() {
   const [user , setUser] = useState([]);
 

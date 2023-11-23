@@ -1,17 +1,9 @@
 import React from "react";
-import Login2 from "./Page/Login222";
-
-
+import RoutePage from "./Route/index";
 
 function App() {
   return ( 
-  <div className="container">
-    
-    
-    <Login2>
-    </Login2>
-  </div>
-  
-  );
-};
+  <RoutePage/>
+  )
+}
 export default App;
