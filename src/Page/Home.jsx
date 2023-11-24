@@ -10,12 +10,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
 export default function Home() {
     const navigate = useNavigate();
     const [hospitalName, setHospitalName] = useState([]);
-    const [province, setProvince] = useState('');
 
+    
     useEffect(() => {
         axios.get('http://192.168.101.40:5000/api/test')
         .then((response)=>{
@@ -43,13 +42,6 @@ export default function Home() {
         setSelectedValue(event.target.value);
     };
 
-    const handleHospitalNameChange = (event) => {
-        setHospitalName(event.target.value);
-    };
-
-    const handleProvinceChange = (event) => {
-        setProvince(event.target.value);
-    };
 
     // const horizontalLayout = {
     //     display: 'flex',
@@ -62,8 +54,7 @@ export default function Home() {
     console.log (rows)
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h5 style={{ textAlign: 'center', margin: '5px 0' }}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h5>
+        <div >
             <Box
                 component="form"
                 sx={{
@@ -77,15 +68,13 @@ export default function Home() {
                 id="outlined-basic1"
                 label="โรงพยาบาล"
                 variant="outlined"
-                value={hospitalName}
-                onChange={handleHospitalNameChange}
+               
             />
                 <TextField 
                 id="filled-basic1" 
                 label="จังหวัด" 
                 variant="filled" 
-                value={province}
-                onChange={handleProvinceChange}
+                
             />
                 <TextField 
                 id="outlined-basic2" 
@@ -118,12 +107,7 @@ export default function Home() {
                 label="ติดตั้งครั้งเเรก" 
                 variant="outlined" 
             />
-                <TextField 
-                id="filled-basic3" 
-                label="Service" 
-                variant="filled" 
-            />
-
+                Service
                 {/* Radio buttons */}
                 <RadioGroup
                     aria-label="gender"
@@ -152,14 +136,14 @@ export default function Home() {
                 variant="outlined" 
             />
             </Box>
-            <Box>
-            <RadioGroup
-                    aria-label="gender"
-                    name="gender1"
-                    value={selectedValue}
-                    onChange={handleChange}
-                    style={{ display: 'flex', flexDirection: 'row' }}
-                >
+            <Box style={{ display: 'flex', justifyContent: 'center' }}>
+                    <RadioGroup
+                     aria-label="gender"
+                     name="gender1"
+                     value={selectedValue}
+                     onChange={handleChange}
+                     style={{ display: 'flex', flexDirection: 'row' }}
+            >
                     <FormControlLabel value="c" control={<Radio />} label="HOSxP" />
                     <FormControlLabel value="d" control={<Radio />} label="HospitalIOS" />
                     <FormControlLabel value="e" control={<Radio />} label="Other" />
@@ -217,7 +201,6 @@ export default function Home() {
       </Table>
     </TableContainer>
             </Box>
-            <button onClick={logout} style={{ marginTop: '10px' }}  >Log out</button>
         </div>
     );
 }
