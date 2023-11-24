@@ -10,12 +10,11 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
-
 export default function Home() {
     const navigate = useNavigate();
     const [hospitalName, setHospitalName] = useState([]);
-    const [province, setProvince] = useState('');
 
+    
     useEffect(() => {
         axios.get('http://192.168.101.40:5000/api/test')
         .then((response)=>{
@@ -43,13 +42,6 @@ export default function Home() {
         setSelectedValue(event.target.value);
     };
 
-    const handleHospitalNameChange = (event) => {
-        setHospitalName(event.target.value);
-    };
-
-    const handleProvinceChange = (event) => {
-        setProvince(event.target.value);
-    };
 
     // const horizontalLayout = {
     //     display: 'flex',
@@ -62,8 +54,7 @@ export default function Home() {
     console.log (rows)
 
     return (
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <h5 style={{ textAlign: 'center', margin: '5px 0' }}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h5>
+        <div >
             <Box
                 component="form"
                 sx={{
@@ -77,15 +68,13 @@ export default function Home() {
                 id="outlined-basic1"
                 label="โรงพยาบาล"
                 variant="outlined"
-                value={hospitalName}
-                onChange={handleHospitalNameChange}
+               
             />
                 <TextField 
                 id="filled-basic1" 
                 label="จังหวัด" 
                 variant="filled" 
-                value={province}
-                onChange={handleProvinceChange}
+                
             />
                 <TextField 
                 id="outlined-basic2" 
@@ -118,12 +107,7 @@ export default function Home() {
                 label="ติดตั้งครั้งเเรก" 
                 variant="outlined" 
             />
-                <TextField 
-                id="filled-basic3" 
-                label="Service" 
-                variant="filled" 
-            />
-
+                Service
                 {/* Radio buttons */}
                 <RadioGroup
                     aria-label="gender"
@@ -152,14 +136,14 @@ export default function Home() {
                 variant="outlined" 
             />
             </Box>
-            <Box>
-            <RadioGroup
-                    aria-label="gender"
-                    name="gender1"
-                    value={selectedValue}
-                    onChange={handleChange}
-                    style={{ display: 'flex', flexDirection: 'row' }}
-                >
+            <Box style={{ display: 'flex', justifyContent: 'center' }}>
+                    <RadioGroup
+                     aria-label="gender"
+                     name="gender1"
+                     value={selectedValue}
+                     onChange={handleChange}
+                     style={{ display: 'flex', flexDirection: 'row' }}
+            >
                     <FormControlLabel value="c" control={<Radio />} label="HOSxP" />
                     <FormControlLabel value="d" control={<Radio />} label="HospitalIOS" />
                     <FormControlLabel value="e" control={<Radio />} label="Other" />
@@ -177,18 +161,18 @@ export default function Home() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-          <TableCell align="right">user_id</TableCell>
-            <TableCell align="right">email</TableCell>
-            <TableCell align="right">name</TableCell>
-            <TableCell align="right">given_name</TableCell>
-            <TableCell align="right">family_name</TableCell>
-            <TableCell align="right">nickname</TableCell>
-            <TableCell align="right">last_ip</TableCell>
-            <TableCell align="right">logins_count</TableCell>
-            <TableCell align="right">created_at</TableCell>
-            <TableCell align="right">updated_at</TableCell>
-            <TableCell align="right">last_login</TableCell>
-            <TableCell align="right">email_verified</TableCell>
+          <TableCell align="center">user_id</TableCell>
+            <TableCell align="center">email</TableCell>
+            <TableCell align="center">name</TableCell>
+            <TableCell align="center">given_name</TableCell>
+            <TableCell align="center">family_name</TableCell>
+            <TableCell align="center">nickname</TableCell>
+            <TableCell align="center">last_ip</TableCell>
+            <TableCell align="center">logins_count</TableCell>
+            <TableCell align="center">created_at</TableCell>
+            <TableCell align="center">updated_at</TableCell>
+            <TableCell align="center">last_login</TableCell>
+            <TableCell align="center">email_verified</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -200,25 +184,23 @@ export default function Home() {
               <TableCell component="th" scope="row">
                 {i+1}
               </TableCell>
-              <TableCell align="right">{row.user_id}</TableCell>
-              <TableCell align="right">{row.email}</TableCell>
-              <TableCell align="right">{row.name}</TableCell>
-              <TableCell align="right">{row.given_name}</TableCell>
-              <TableCell align="right">{row.family_name}</TableCell>
-              <TableCell align="right">{row.nickname}</TableCell>
-              <TableCell align="right">{row.logins_count}</TableCell>
-              <TableCell align="right">{row.created_at}</TableCell>
-              <TableCell align="right">{row.updated_at}</TableCell>
-              <TableCell align="right">{row.last_login}</TableCell>
-              <TableCell align="right">{row.email_verified}</TableCell>
+              <TableCell align="center">{row.user_id}</TableCell>
+              <TableCell align="center">{row.email}</TableCell>
+              <TableCell align="center">{row.name}</TableCell>
+              <TableCell align="center">{row.given_name}</TableCell>
+              <TableCell align="center">{row.family_name}</TableCell>
+              <TableCell align="center">{row.nickname}</TableCell>
+              <TableCell align="center">{row.logins_count}</TableCell>
+              <TableCell align="center">{row.created_at}</TableCell>
+              <TableCell align="center">{row.updated_at}</TableCell>
+              <TableCell align="center">{row.last_login}</TableCell>
+              <TableCell align="center">{row.email_verified}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
             </Box>
-            
-            <button onClick={logout} style={{ marginTop: '10px' }}  >Log out</button>
         </div>
     );
 }
