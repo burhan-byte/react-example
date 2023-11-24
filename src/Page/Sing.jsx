@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TextField,Box } from '@mui/material';
+// import { TextField,Box ,Menu, MenuItem} from '@mui/material';
 import axios from 'axios';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -9,17 +9,23 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import AppBar from '@mui/material/AppBar';
-
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+// import AppBar from '@mui/material/AppBar';
+// import Toolbar from '@mui/material/Toolbar';
+// import Typography from '@mui/material/Typography';
+// import Button from '@mui/material/Button';
+// import IconButton from '@mui/material/IconButton';
+// import MenuIcon from '@mui/icons-material/Menu';
+// import InputAdornment from '@mui/material/InputAdornment';
+// import Radio from '@mui/material/Radio';
+// import RadioGroup from '@mui/material/RadioGroup';
+// import FormControlLabel from '@mui/material/FormControlLabel';
+// import FormControl from '@mui/material/FormControl';
+// import FormLabel from '@mui/material/FormLabel';
 
 export default function Sing() {
     const navigate = useNavigate();
     const [hospitalname,setHospitalname] =useState([]);
+    
 
     useEffect(() => {
         axios.get('http://192.168.101.40:5000/api/test')
@@ -72,65 +78,11 @@ export default function Sing() {
     const rows= hospitalname;
     console.log (rows)
 
+   
+
     return (
         <div>
-            <h1 style={centerText}>LIS INSTRUMENTS MAINTENANCE REPORT FORM</h1>
-            <Box
-                component="form"
-                sx={{
-                        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-         <div>
-         <TextField
-          required
-          id="standard-required"
-          label="โรงพยาบาล"
-          defaultValue=""
-          variant="standard"
-        />
-        <TextField
-          required
-          id="standard-required"
-          label="จังหวัด"
-          defaultValue=""
-          variant="standard"
-        />
-        <TextField
-          required
-          id="standard-required"
-          label="วันที่ปฏิบัติงาน"
-          defaultValue=""
-          variant="standard"
-        />
-        <TextField
-          required
-          id="standard-required"
-          label="เดือน"
-          defaultValue=""
-          variant="standard"
-        />
-        <TextField
-          required
-          id="standard-required"
-          label="ปี"
-          defaultValue=""
-          variant="standard"
-        />
-        <TextField
-          required
-          id="standard-required"
-          label="ติดตั้งครั้งแรก"
-          defaultValue=""
-          variant="standard"
-        />
-
-        </div>
-
-    </Box>
-    <Box>
+            
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
@@ -182,29 +134,9 @@ export default function Sing() {
 
 
 
-    </Box>
+    
 
-    <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton
-              size="large"
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              sx={{ mr: 2 }}
-            >
-              <MenuIcon />
-            </IconButton>
-            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              News
-            </Typography>
-            <Button color="inherit" onClick={logout}>
-              Logout
-            </Button>
-          </Toolbar>
-        </AppBar>
-      </Box>
+   
   
 
         </div>
