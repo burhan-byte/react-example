@@ -25,7 +25,6 @@ export default function Bar() {
     // Adjust the path as needed
     navigate('/');
   };
-
   return (
     <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%', zIndex: 1000 }}>
       <AppBar position="static" sx={{ backgroundColor: '#e91e63' /* Pink color */ }}>
