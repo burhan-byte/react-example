@@ -4,6 +4,15 @@ import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
 import { TextField } from '@mui/material';
+import InputAdornment from '@mui/material';
+import Checkbox from '@mui/material/Checkbox';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import Typography from '@mui/material';
+
+
+
 
 const Item = styled(Paper)(({ theme }) => ({
   
@@ -14,8 +23,172 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function BasicStack() {
   return (
-    <Box sx={{ width: '100%' }}>
-      <Stack spacing={15}>
+    
+    
+    <Box xs={12} md={6} lg={5}>
+      
+      <Stack spacing={10} >
+      
+        <Item >
+          
+        <Box
+                component="form"
+                sx={{
+                    '& > :not(style)': { m: 0.5 , width: '28ch' },
+                }}
+                noValidate
+                autoComplete="off"
+                style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'left'  }}
+            >
+              
+         <TextField
+
+          id="filled-search"
+          label="โรงพยาบาล"
+          defaultValue=""
+          variant="standard"
+          
+        />
+         <TextField
+          required
+          id="standard-required"
+          label="จังหวัด"
+          defaultValue=""
+          variant="standard"
+        />
+        <TextField
+          required
+          id="standard-required"
+          label="วันที่ปฏิบัติงาน"
+          defaultValue=""
+          variant="standard"
+        />
+          <TextField
+          required
+          id="standard-required"
+          label="เดือน"
+          defaultValue=""
+          variant="standard"
+        />
+        <TextField
+          required
+          id="standard-required"
+          label="ปี"
+          defaultValue=""
+          variant="standard"
+        />
+         <TextField
+          required
+          id="standard-required"
+          label="ติดตั้งครั้งแรก"
+          defaultValue=""
+          variant="standard"
+        />
+
+<FormControl component="fieldset">
+      <FormGroup aria-label="position" row>
+        <FormControlLabel
+          value="a"
+          control={<Checkbox />}
+          label="Y"
+          
+        />
+        <FormControlLabel
+          value="b"
+          control={<Checkbox />}
+          label="N"
+          
+        />
+      </FormGroup>
+    </FormControl>
+    <TextField
+          required
+          id="standard-required"
+          label="วันที่เข้าทำงานครั้งต่อไป เดือน"
+          defaultValue=""
+          variant="standard"
+        />
+        <TextField
+          required
+          id="standard-required"
+          label="ปี"
+          defaultValue=""
+          variant="standard"
+        />
+        <TextField
+          required
+          id="standard-required"
+          label="โดย"
+          defaultValue=""
+          variant="standard"
+        />
+        
+  <FormControl component="fieldset">
+      <FormGroup aria-label="position" row>
+        <FormControlLabel
+          value="c"
+          control={<Checkbox />}
+          label="HOSxP"
+          
+        />
+      </FormGroup>
+    </FormControl>
+
+    <FormControl component="fieldset">
+      <FormGroup aria-label="position" row>
+    <FormControlLabel
+          value="d"
+          control={<Checkbox />}
+          label="HospitalOS"
+          
+          
+        />
+        
+    </FormGroup>
+    </FormControl>
+    <FormControl component="fieldset">
+  <FormGroup >
+    <FormControlLabel
+      value="e"
+      control={<Checkbox />}
+      label="Other"
+      
+      
+    />
+    
+  </FormGroup>
+</FormControl>
+
+
+
+
+
+   
+<FormControl component="fieldset">
+      <FormGroup aria-label="position" row>
+        <FormControlLabel
+          value="f"
+          control={<Checkbox />}
+          label="Gateway"
+          style={{ display: 'flex', justifyContent: '' }}
+        />
+       
+      </FormGroup>
+    </FormControl>
+    <FormGroup aria-label="position" row>
+    <FormControlLabel
+          value="g"
+          control={<Checkbox />}
+          label="None Gateway"
+          style={{ display: 'flex', justifyContent: 'left' }}
+          
+        />
+        </FormGroup>
+    </Box>
+    
+          
+        </Item>
+        
         <Item>
         <Box
                 component="form"
@@ -32,35 +205,98 @@ export default function BasicStack() {
          <TextField
 
           id="filled-search"
-          label="โรงพยาบาล"
+          label="Computer"
           defaultValue=""
           variant="standard"
         />
          <TextField
           required
           id="standard-required"
-          label="จังหวัด"
+          label="Monitor"
           defaultValue=""
           variant="standard"
         />
         <TextField
           required
           id="standard-required"
-          label="วันที่ปฏิบัติงาน"
+          label="Key board"
+          defaultValue=""
+          variant="standard"
+        />
+        <TextField
+
+id="filled-search"
+label="Mouse"
+defaultValue=""
+variant="standard"
+/>
+<TextField
+          required
+          id="standard-required"
+          label="UPS"
+          defaultValue=""
+          variant="standard"
+        />
+         <TextField
+          required
+          id="standard-required"
+          label="S/N"
           defaultValue=""
           variant="standard"
         />
         
+          <TextField
+          required
+          id="standard-required"
+          label="S/N"
+          defaultValue=""
+          variant="standard"
+        />
+        
+         <TextField
+          required
+          id="standard-required"
+          label="S/N"
+          defaultValue=""
+          variant="standard"
+        />
 
 
+         <TextField
+          required
+          id="standard-required"
+          label="S/N"
+          defaultValue=""
+          variant="standard"
+        />
+        
+         <TextField
+          required
+          id="standard-required"
+          label="S/N"
+          defaultValue=""
+          variant="standard"
+        /> 
+        <TextField
+        required
+        id="standard-required"
+        label=""
+        defaultValue=""
+        variant="standard"
+      />
     </Box>
           
+
+          
         </Item>
-        <Item>Item 2</Item>
-        <Item>Item 3</Item>
-        <Item>Item 4</Item>
-        <Item>Item 5</Item>
-        <Item>Item 6</Item>
+        <Item>
+
+        </Item>
+
+        
+       
+        
+        
       </Stack>
     </Box>
   );
@@ -70,56 +306,52 @@ export default function BasicStack() {
 
 
 
-// import { styled } from '@mui/material/styles';
-// import Grid from '@mui/material/Grid';
-// import Paper from '@mui/material/Paper';
+
+
+
+// import * as React from 'react';
 // import Box from '@mui/material/Box';
-// import { TextField } from '@mui/material';
-// import InputAdornment from '@mui/material';
+// import Paper from '@mui/material/Paper';
+// import Stack from '@mui/material/Stack';
+// import { styled } from '@mui/material/styles';
+// import { TextField, Checkbox, FormControlLabel, FormControl, FormGroup, Typography } from '@mui/material';
 
 // const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
+//   padding: theme.spacing(3),
 //   textAlign: 'center',
 //   color: theme.palette.text.secondary,
 // }));
 
-// export default function RowAndColumnSpacing() {
+// export default function BasicStack() {
 //   return (
-//     <Box sx={{ width: '100%' }}>
-//       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-//         <Grid item xs={6}>
-//           <Item>
-//           <Box
-//                 component="form"
-//                 sx={{
-//                     '& > :not(style)': { m: 1, width: '25ch' },
-//                 }}
-//                 noValidate
-//                 autoComplete="off"
-//                 style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' }}
-//             >
-      
-    
-//          <div>
-//          <TextField
+//     <Box>
+//       <Stack spacing={4}>
+//         <Item>
+//           <form
+//             style={{
+//               display: 'flex',
+//               flexDirection: 'row',
+//               flexWrap: 'wrap',
+//               justifyContent: 'space-between',
+//             }}
+//           >
+//             {/* ... โค้ดฟอร์ม ... */}
+//           </form>
+//         </Item>
 
-//           id="filled-search"
-//           label="โรงพยาบาล"
-//           defaultValue=""
-//           variant="standard"
-//         />
-        
-        
-
-//         </div>
-
-//     </Box>
-
-//           </Item>
-//         </Grid>
-//       </Grid>
+//         <Item>
+//           <form
+//             style={{
+//               display: 'flex',
+//               flexDirection: 'row',
+//               flexWrap: 'wrap',
+//               justifyContent: 'space-between',
+//             }}
+//           >
+//             {/* ... โค้ดฟอร์ม ... */}
+//           </form>
+//         </Item>
+//       </Stack>
 //     </Box>
 //   );
 // }

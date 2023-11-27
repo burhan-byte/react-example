@@ -515,7 +515,7 @@ const FormText = () => {
 if(username==="Nurda" && password==="1234"){
 console.log("Nurda")
 localStorage.setItem('token',1)
-navigate("/Sing")
+navigate("/Sing") 
 }else{
 console.log("fail")
 }
