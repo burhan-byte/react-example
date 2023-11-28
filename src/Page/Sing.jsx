@@ -67,10 +67,16 @@ export default function Sing() {
       <Grid item xs={12} md={6} lg={15} style={{ position: 'relative' }}>
       {/* Image */}
       <img
-        src="https://i.pinimg.com/736x/8c/63/ac/8c63aca228453e8f50731be47b40cb17.jpg"
-        alt="A beautiful landscape"
-        style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '4px',cursor: "pointer" }}
-      />
+  src="https://i.pinimg.com/736x/8c/63/ac/8c63aca228453e8f50731be47b40cb17.jpg"
+  alt="A beautiful landscape"
+  style={{
+    width: '100%',
+    height: '842.1px', // Set your desired height
+    objectFit: 'cover',
+    borderRadius: '10px',
+    cursor: 'pointer',
+  }}
+/>
 
       {/* Text on top of the image */}
       <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center' }}>

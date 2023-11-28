@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Box, Menu, MenuItem } from '@mui/material';
+import { Box, Menu, MenuItem, Typography, Button } from '@mui/material';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
+import AssignmentIcon from '@mui/icons-material/Assignment';
+import InfoIcon from '@mui/icons-material/Info';
 import { Link, useNavigate } from 'react-router-dom';
 
 export default function Bar() {
@@ -25,119 +25,69 @@ export default function Bar() {
     // Adjust the path as needed
     navigate('/');
   };
+
   return (
     <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%', zIndex: 1000 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#e91e63' /* Pink color */ }}>
+      <AppBar position="static" sx={{ backgroundColor: '#e91e63' }}>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
-            sx={{ mr: 2 }}
+            sx={{ mr: 1 }}
             onClick={handleMenuClick}
           >
             <MenuIcon />
           </IconButton>
-          <Menu
-            anchorEl={anchorEl}
-            open={Boolean(anchorEl)}
-            onClose={handleMenuClose}
-          >
-            <Link to="/Side" className="menu-bars">
-              <MenuItem onClick={handleMenuClose}>Lis Form</MenuItem>
+          <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
+            <Link to="/Side" className="menu-bars" style={{ textDecoration: 'none', color: '#FF3333' }}>
+              <MenuItem
+                onClick={handleMenuClose}
+                sx={{
+                  fontSize: '1rem',
+                  paddingY: '1rem',
+                  fontWeight: 'bold',
+                  fontFamily: 'cursive', // Custom font family for Lis Form
+                }}
+              >
+                <AssignmentIcon sx={{ marginRight: 1 }} />
+                Lis Form
+              </MenuItem>
             </Link>
-            <Link to="/666" className="menu-bars">
-              <MenuItem onClick={handleMenuClose}>Item 2</MenuItem>
+            <Link to="/666" className="menu-bars" style={{ textDecoration: 'none', color: '#009688' }}>
+              <MenuItem
+                onClick={handleMenuClose}
+                sx={{
+                  fontSize: '1rem',
+                  paddingY: '1rem',
+                  fontWeight: 'bold',
+                  fontFamily: 'cursive', // Custom font family for Item 2
+                }}
+              >
+                <InfoIcon sx={{ marginRight: 1 }} />
+                Item 2
+              </MenuItem>
             </Link>
-            {/* <Link to="/" className="menu-bars">
-              <MenuItem onClick={handleMenuClose}>Item 3</MenuItem>
-            </Link> */}
           </Menu>
-          <Typography variant="h8" align="center" component="div" sx={{ flexGrow: 1, color: '#fff' /* White color */ }}>
+          <Typography
+            variant="h8"
+            align="center"
+            component="div"
+            sx={{
+              flexGrow: 1,
+              color: '#fff',
+              textDecoration: 'none',
+              fontFamily: 'cursive', // Custom font family for the main title
+            }}
+          >
             LIS INSTRUMENTS MAINTENANCE REPORT FORM
           </Typography>
-          
-          <Button color="inherit" onClick={logout} variant="h7">
-          
-          Log Out
-          
-            
+          <Button color="inherit" onClick={logout} variant="outlined">
+            Log Out
           </Button>
         </Toolbar>
       </AppBar>
     </Box>
   );
 }
-
-
-
-
-// import react, { useState } from "react";
-// import { Box, IconButton, Menu, MenuItem } from "@mui/material";
-// import InputBase from "@mui/material/InputBase";
-// import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-// import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
-// import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-// import SearchIcon from "@mui/icons-material/Search";
-// import { Link } from "react-router-dom";
-
-// const Bar = () => {
-//   const [anchorEl, setAnchorEl] = useState(null);
-
-//   const handleMenu = (event) => {
-//     setAnchorEl(event.currentTarget);
-//   };
-
-//   const handleClose = () => {
-//     setAnchorEl(null);
-//   };
-//   return (
-//     <Box display="flex" justifyContent="space-between" p={2}>
-//       {/* search  */}
-//       <Box display="flex" borderRadius="3px" backgroundColor="#F5EFE7">
-//         <InputBase sx={{ ml: 2, flex: 1 }} placeholder="Search" />
-//         <IconButton type="button" sx={{ p: 1 }}>
-//           <SearchIcon />
-//         </IconButton>
-//       </Box>
-
-//       {/* icons */}
-//       <Box display="flex">
-//         <IconButton>
-//           <NotificationsOutlinedIcon />
-//         </IconButton>
-//         <IconButton>
-//           <SettingsOutlinedIcon />
-//         </IconButton>
-//         <IconButton>
-//           <PersonOutlinedIcon onClick={handleMenu} />
-//           <Menu
-//             id="menu-appbar"
-//             anchorEl={anchorEl}
-//             anchorOrigin={{
-//               vertical: "top",
-//               horizontal: "right",
-//             }}
-//             keepMounted
-//             transformOrigin={{
-//               vertical: "top",
-//               horizontal: "right",
-//             }}
-//             open={Boolean(anchorEl)}
-//             onClose={handleClose}
-//           >
-//             <Link to="/Side" className="menu-bars">
-//               <MenuItem onClick={handleClose}>Profile</MenuItem>
-//             </Link>
-//             <Link to="/666" className="menu-bars">
-//               <MenuItem onClick={handleClose}>My account</MenuItem>
-//             </Link>
-//           </Menu>
-//         </IconButton>
-//       </Box>
-//     </Box>
-//   );
-// };
-
-// export default Bar;
