@@ -9,10 +9,18 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import BottomNavigation from '@mui/material/BottomNavigation';
+import BottomNavigationAction from '@mui/material/BottomNavigationAction';
+import RestoreIcon from '@mui/icons-material/Restore';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import LocationOnIcon from '@mui/icons-material/LocationOn'
+import FolderIcon from '@mui/icons-material/Folder';
+
 
 export default function Home() {
     const navigate = useNavigate();
     const [hospitalName, setHospitalName] = useState([]);
+    const [value, setValue] = useState(0); // assuming this state for BottomNavigation
 
     
     useEffect(() => {
@@ -38,11 +46,13 @@ export default function Home() {
     const [selectedValue, setSelectedValue] = useState('');
 
 
-    const handleChange = (event) => {
-        setSelectedValue(event.target.value);
-    };
+    // const handleChange = (event) => {
+    //     setSelectedValue(event.target.value);
+    // };
 
-
+    const handleChange = (event, newValue) => {
+        setValue(newValue);
+      };
     // const horizontalLayout = {
     //     display: 'flex',
     //     flexDirection: 'row',
@@ -200,6 +210,25 @@ export default function Home() {
         </TableBody>
       </Table>
     </TableContainer>
+    <BottomNavigation sx={{ width: 1500 }} value={value} onChange={handleChange}>
+      <BottomNavigationAction
+        label="Recents"
+        value="recents"
+        icon={<RestoreIcon />}
+      />
+      <BottomNavigationAction
+        label="Favorites"
+        value="favorites"
+        icon={<FavoriteIcon />}
+      />
+      <BottomNavigationAction
+        label="Nearby"
+        value="nearby"
+        icon={<LocationOnIcon />}
+      />
+      <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
+    </BottomNavigation>
+    {/* <button onClick={logout} style={{ marginTop: '10px' }}  >Log out</button> */}
             </Box>
         </div>
     );
