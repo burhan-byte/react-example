@@ -1,55 +1,319 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles';
-import TextField from '@mui/material/TextField';
-import { Radio, FormControlLabel, RadioGroup } from '@mui/material';
-import BottomNavigation from '@mui/material/BottomNavigation';
-import BottomNavigationAction from '@mui/material/BottomNavigationAction';
-import RestoreIcon from '@mui/icons-material/Restore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
-import FolderIcon from '@mui/icons-material/Folder';
+import { TextField } from '@mui/material';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormControl from '@mui/material/FormControl';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormLabel from '@mui/material/FormLabel';
 
-const Item = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
+
+const Item = styled(Paper)(({ theme }) => ({
+  
+  padding: theme.spacing(10),
   textAlign: 'center',
   color: theme.palette.text.secondary,
 }));
 
-export default function About() {
-  const [selectedValue, setSelectedValue] = React.useState('a');
-  const [value, setValue] = React.useState('recents');
+export default function BasicStack() {
+  const [value, setValue] = React.useState('female');
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleChange = (event) => {
+    setValue(event.target.value);
   };
 
-  const handleRadioChange = (event) => {
-    setSelectedValue(event.target.value);
-  };
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Stack spacing={2}>
-        <Item>
-          {/* Your form components */}
-        </Item>
-        <Item>Item 2</Item>
-        <Item>Item 3</Item>
-      </Stack>
-      <BottomNavigation
-        sx={{ width: '100%', position: 'fixed', bottom: 0 }}
-        value={value}
-        onChange={handleChange}
+    
+    
+    <Box xs={12} md={6} lg={5}>
+      
+      <Stack spacing={10} >
+      
+        <Item >
+        <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+       <TextField 
+       id="outlined-basic" 
+       label="โรงพยาบาล" 
+       defaultValue=""
+       variant="outlined" 
+       />
+
+      <TextField 
+      id="filled-basic" 
+      label="จังหวัด" 
+      defaultValue=""
+      variant="filled" 
+      />
+
+      <TextField 
+      id="outlined-basic" 
+      label="วันที่เข้าปฏิบัติงาน"
+      defaultValue="" 
+      variant="outlined" 
+    />
+      <TextField 
+      id="filled-basic" 
+      label="เดือน" 
+      defaultValue=""
+      variant="filled"
+  
+      />
+
+<TextField 
+      id="filled-basic" 
+      label="ปี" 
+      defaultValue=""
+      variant="filled"
+  
+      />
+
+<TextField 
+      id="filled-basic" 
+      label="ติดตั้งครั้งเเรก" 
+      defaultValue=""
+      variant="filled"
+  
+      />
+
+<FormControl component="fieldset">
+  <RadioGroup
+    aria-labelledby="demo-controlled-radio-buttons-group"
+    name="controlled-radio-buttons-group"
+    value={value}
+    onChange={handleChange}
+    style={{ display: 'flex', flexDirection: 'row' }} 
+  >
+    <FormControlLabel value="female" control={<Radio />} label="Y" />
+    <FormControlLabel value="male" control={<Radio />} label="N" />
+  </RadioGroup>
+</FormControl>
+<TextField 
+       id="outlined-basic" 
+       label="วันที่เข้าทำงานครั้งต่อไป เดือน" 
+       defaultValue=""
+       variant="outlined" 
+       />
+
+      <TextField 
+      id="filled-basic" 
+      label="จังหวัด" 
+      defaultValue=""
+      variant="filled" 
+      />
+
+      <TextField 
+      id="outlined-basic" 
+      label="วันที่เข้าปฏิบัติงาน"
+      defaultValue="" 
+      variant="outlined" 
+    />
+      <TextField 
+      id="filled-basic" 
+      label="ปี" 
+      defaultValue=""
+      variant="filled"
+  
+      />
+
+<TextField 
+      id="filled-basic" 
+      label="โดย" 
+      defaultValue=""
+      variant="filled"
+  
+      />
+       <FormControl>
+      <RadioGroup
+        row
+        aria-labelledby="demo-row-radio-buttons-group-label"
+        name="row-radio-buttons-group"
       >
-        <BottomNavigationAction label="Recents" value="recents" icon={<RestoreIcon />} />
-        <BottomNavigationAction label="Favorites" value="favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" value="nearby" icon={<LocationOnIcon />} />
-        <BottomNavigationAction label="Folder" value="folder" icon={<FolderIcon />} />
-      </BottomNavigation>
+        <FormControlLabel value="female" control={<Radio />} label="HOSxP" />
+        <FormControlLabel value="male" control={<Radio />} label="HospitalOS" />
+        <FormControlLabel value="other" control={<Radio />} label="Other" />
+    
+      </RadioGroup>
+    </FormControl>
+    </Box>
+        
+        </Item>
+        
+        <Item>
+        <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      
+       
+        <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+       <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+       <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+       <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+       <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+       <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+       <div>
+        <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+         <TextField
+          id="filled-multiline-flexible"
+          label="Multiline"
+          multiline
+          maxRows={4}
+          variant="filled"
+        />
+       </div>
+    </Box>
+           
+          
+        </Item>
+        <Item>
+        <Box
+      component="form"
+      sx={{
+        '& > :not(style)': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <TextField id="standard-basic" label="Software" variant="standard" />
+      <TextField id="standard-basic" label="Start" variant="standard" />
+      <TextField id="standard-basic" label="Finish" variant="standard" />
+      <TextField id="standard-basic" label="CLIS" variant="standard" />
+      <TextField id="standard-basic" label="วันที่" variant="standard" />
+      <TextField id="standard-basic" label="DM" variant="standard" />
+      <TextField id="standard-basic" label="วันที่" variant="standard" />
+      <TextField id="standard-basic" label="ลงชื่อผู้ปฏิบัติงาน" variant="standard" />
+      <TextField id="standard-basic" label="วันที่" variant="standard" />
+      <TextField id="standard-basic" label="ลงชื่อหัวหน้า Lab/เจ้าหน้าที่ Lab" variant="standard" />
+      <TextField id="standard-basic" label="วันที่" variant="standard" />
+      <TextField id="standard-basic" label="ข้อคิดเห็นของท่าน" variant="standard" />
+    </Box>
+
+        </Item>
+
+        
+       
+        
+        
+      </Stack>
     </Box>
   );
 }
+
+
+
+
+
+
+
+
