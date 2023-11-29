@@ -21,13 +21,12 @@ export default function Bar() {
   };
 
   const logout = () => {
-    // Assuming you want to redirect to the login page on logout
-    // Adjust the path as needed
+    
     navigate('/');
   };
 
   return (
-    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%', zIndex: 1000 }}>
+    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%',top:0, zIndex: 1000 }}>
       <AppBar position="static" sx={{ backgroundColor: '#e91e63' }}>
         <Toolbar>
           <IconButton
@@ -41,32 +40,32 @@ export default function Bar() {
             <MenuIcon />
           </IconButton>
           <Menu anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={handleMenuClose}>
-            <Link to="/Side" className="menu-bars" style={{ textDecoration: 'none', color: '#FF3333' }}>
+            <Link to="/side" className="menu-bars" style={{ textDecoration: 'none', color: '#FF3333' }}>
               <MenuItem
                 onClick={handleMenuClose}
                 sx={{
                   fontSize: '1rem',
                   paddingY: '1rem',
                   fontWeight: 'bold',
-                  fontFamily: 'cursive', // Custom font family for Lis Form
+                  fontFamily: 'cursive', 
                 }}
               >
                 <AssignmentIcon sx={{ marginRight: 1 }} />
                 Lis Form
               </MenuItem>
             </Link>
-            <Link to="/666" className="menu-bars" style={{ textDecoration: 'none', color: '#009688' }}>
+            <Link to="/sine" className="menu-bars" style={{ textDecoration: 'none', color: '#009688' }}>
               <MenuItem
                 onClick={handleMenuClose}
                 sx={{
                   fontSize: '1rem',
                   paddingY: '1rem',
                   fontWeight: 'bold',
-                  fontFamily: 'cursive', // Custom font family for Item 2
+                  fontFamily: 'cursive', 
                 }}
               >
                 <InfoIcon sx={{ marginRight: 1 }} />
-                Item 2
+                Table
               </MenuItem>
             </Link>
           </Menu>
@@ -78,7 +77,7 @@ export default function Bar() {
               flexGrow: 1,
               color: '#fff',
               textDecoration: 'none',
-              fontFamily: 'cursive', // Custom font family for the main title
+              fontFamily: 'cursive', 
             }}
           >
             LIS INSTRUMENTS MAINTENANCE REPORT FORM
