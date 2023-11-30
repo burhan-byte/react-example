@@ -8,13 +8,17 @@ import Logout from "../Component/Logout/Logout";
 import About from "../Page/About";
 import Bar from "../Component/Web/Bar";
 import Side from "../Page/Side";
+import Profile from "../Page/Profile";
 import { Box } from "@mui/material";
 
+
+
 export default function RoutePage() {
+  
   return (
     <>
     <Routes>
-       <Route path="/" element={<Login1 />} />
+      <Route path="/" element={<Login1 />} />
       <Route path="/login2" element={<Login2 />} /> 
     </Routes>
     <>
@@ -27,6 +31,8 @@ export default function RoutePage() {
       <Route path="/Sing" element={<Sing />} />
       <Route path="/Side" element={<Side />} />
       <Route path="/about" element={<About />} />
+      <Route path="/bar" element={<Bar />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
     </Box>
     

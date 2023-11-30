@@ -25,9 +25,10 @@ export default function Logout() {
     // Adjust the path as needed
     navigate('/login2');
   };
+  
   return (
     <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%', zIndex: 1000 , top: 0 }}>
-      <AppBar position="static" sx={{ backgroundColor: '#FF99CC' /* Pink color */ }}>
+      <AppBar position="static" sx={{ backgroundColor: '#FF1493' /* Pink color */  }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -46,6 +47,9 @@ export default function Logout() {
           >
             <Link to="/About" className="menu-bars">
               <MenuItem onClick={handleMenuClose}>Menu From</MenuItem>
+            </Link>
+            <Link to="/profile" className="menu-bars">
+              <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
             </Link>
           </Menu>
           <Typography variant="h8" align="center" component="div" sx={{ flexGrow: 1, color: '#fff' /* White color */ }}>
