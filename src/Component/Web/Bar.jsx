@@ -70,18 +70,17 @@ export default function Bar() {
             </Link>
           </Menu>
           <Typography
-            variant="h8"
-            align="center"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              color: '#fff',
-              textDecoration: 'none',
-              fontFamily: 'cursive', 
-            }}
-          >
-            LIS INSTRUMENTS MAINTENANCE REPORT FORM
-          </Typography>
+        variant="h"
+        align="center"
+        component="div"
+        sx={{
+          flexGrow: 1,
+          color: '#fff',
+          textDecoration: 'none',
+        }}
+      >
+        LIS INSTRUMENTS MAINTENANCE REPORT FORM
+      </Typography>
           <Button color="inherit" onClick={logout} variant="outlined">
             Log Out
           </Button>

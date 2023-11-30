@@ -7,12 +7,12 @@ import { styled } from '@mui/system';
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: 'center',
-  backgroundColor: '#fff', // Set your desired background color
+  backgroundColor: '#fff', 
   borderRadius: '5px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', // Add a subtle box shadow
+  boxShadow: '0 5px 10px rgba(0, 0, 0, 0.1)', 
 }));
 
 
@@ -50,7 +50,7 @@ const FormText = () => {
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh', backgroundColor: '#E6E6FA' }}>
+    <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
       <Grid item xs={12} md={6} lg={5}>
         <StyledPaper>
         <Typography variant="h6" gutterBottom style={{ fontWeight: 'bold', color: '#333' }}>
@@ -108,21 +108,15 @@ const FormText = () => {
       </Grid>
       <Grid item xs={12} md={6} lg={5}>
         <img
-  src="https://www.salika.co/wp-content/uploads/2019/10/medical-tool-way-to-medical-hub-thailand-1.jpg"
+  src="https://i0.wp.com/rayhaber.com/wp-content/uploads/2021/02/ikinci-el-tibbi-cihaz-alirken-nelere-dikkat-edilir.jpg?resize=678%2C381&ssl=1"
   alt="A beautiful landscape"
-  style={{
-    width: '100%',
-    height: '100%',
-    objectFit: 'cover',
-    borderRadius: '8px', 
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)', 
-  }}
+  style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
 />
 
-        <Typography variant="h5" gutterBottom style={{ textAlign: 'center', marginTop: '20px' }}>
+        <Typography variant="h5" gutterBottom style={{ textAlign: 'center', marginTop: '5px' }}>
           Hi, Welcome
         </Typography>
-        <Typography variant="h5" gutterBottom style={{ textAlign: 'center' }}>
+        <Typography variant="h6" gutterBottom style={{ textAlign: 'center' }}>
           Hi, Welcome back. To Logins Medical
         </Typography>
       </Grid>
