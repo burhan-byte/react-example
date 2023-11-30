@@ -23,7 +23,7 @@ export default function RoutePage() {
     <>
 
     <Bar/>
-    <Box sx={{mt:10}}>
+    <Box  sx={{ mt:10  }}>
     <Routes>
       {/* <Route path="/" element={<Login1 />} /> */}
       {/* <Route path="/login2" element={<Login2 />} /> */}
@@ -34,7 +34,7 @@ export default function RoutePage() {
     </Routes>
     </Box>
    </>
-  </>
+   </>
   );
 }
 

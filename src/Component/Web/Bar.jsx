@@ -26,7 +26,7 @@ export default function Bar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%',top:0, zIndex: 1000  }}>
+    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%',top:0, zIndex: 1000 }}>
       <AppBar position="static" sx={{ backgroundColor: '#e91e63' }}>
         <Toolbar>
           <IconButton
@@ -70,18 +70,17 @@ export default function Bar() {
             </Link>
           </Menu>
           <Typography
-            variant="h8"
-            align="center"
-            component="div"
-            sx={{
-              flexGrow: 1,
-              color: '#fff',
-              textDecoration: 'none',
-              fontFamily: 'cursive', 
-            }}
-          >
-            LIS INSTRUMENTS MAINTENANCE REPORT FORM
-          </Typography>
+        variant="h"
+        align="center"
+        component="div"
+        sx={{
+          flexGrow: 1,
+          color: '#fff',
+          textDecoration: 'none',
+        }}
+      >
+        LIS INSTRUMENTS MAINTENANCE REPORT FORM
+      </Typography>
           <Button color="inherit" onClick={logout} variant="outlined">
             Log Out
           </Button>
