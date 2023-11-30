@@ -26,7 +26,7 @@ export default function Bar() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%',top:0, zIndex: 1000 }}>
+    <Box sx={{ flexGrow: 1, position: 'fixed', width: '100%',top:0, zIndex: 1000  }}>
       <AppBar position="static" sx={{ backgroundColor: '#e91e63' }}>
         <Toolbar>
           <IconButton

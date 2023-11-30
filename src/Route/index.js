@@ -17,8 +17,8 @@ export default function RoutePage() {
   return (
     <>
      <Routes>
-     <Route path="/" element={<Login1 />} />
-     </Routes>
+    <Route path="/" element={<Login1 />} />
+      </Routes>
 
     <>
 
@@ -26,7 +26,7 @@ export default function RoutePage() {
     <Box sx={{mt:10}}>
     <Routes>
       {/* <Route path="/" element={<Login1 />} /> */}
-      <Route path="/login2" element={<Login2 />} />
+      {/* <Route path="/login2" element={<Login2 />} /> */}
       <Route path="/home" element={<Home/>} />
       <Route path="/sing" element={<Sing />} />
       <Route path="/side" element={<Side />} />
@@ -34,7 +34,7 @@ export default function RoutePage() {
     </Routes>
     </Box>
    </>
-   </>
+  </>
   );
 }
 

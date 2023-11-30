@@ -8,6 +8,7 @@ import { Grid,Typography } from '@mui/material';
 
 export default function Sing() {
   
+  
     return (
       <Grid container justifyContent="center" mt={20} >
           <Grid item xs={12} md={6} lg={15} style={{ position: 'relative' }}>
@@ -20,6 +21,8 @@ export default function Sing() {
         objectFit: 'cover',
         borderRadius: '2px',
         cursor: 'pointer',
+        
+        
       }}
     />
 
