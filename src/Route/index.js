@@ -22,11 +22,12 @@ export default function RoutePage() {
       <Route path="/login2" element={<Login2 />} /> 
     </Routes>
     <>
-   
-    <Logout/>
-    <Box sx={{mt:10}} >
+
+    <Bar/>
+    <Box  sx={{ mt:10  }}>
     <Routes>
       {/* <Route path="/" element={<Login1 />} /> */}
+      {/* <Route path="/login2" element={<Login2 />} /> */}
       <Route path="/home" element={<Home/>} />
       <Route path="/Sing" element={<Sing />} />
       <Route path="/Side" element={<Side />} />
@@ -35,13 +36,9 @@ export default function RoutePage() {
       <Route path="/profile" element={<Profile />} />
     </Routes>
     </Box>
-    
-
-
-    </>
-    </>
-    
-    );
+   </>
+   </>
+  );
 }
 
 
