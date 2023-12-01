@@ -1,168 +1,72 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
+import React, { useReducer } from 'react';
 import TextField from '@mui/material/TextField';
+import FormGroup from '@mui/material/FormGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import FormLabel from '@mui/material/FormLabel';
 
-export default function FormPropsTextFields() {
+// Define action types (optional)
+const actionTypes = {
+  SET_HOSPITAL: 'SET_HOSPITAL',
+  SET_PROVINCE: 'SET_PROVINCE',
+  // Add other action types...
+};
+
+// Define initial state
+const initialState = {
+  hospital: '',
+  province: '',
+  // Add other states...
+  install: false,
+  md: false,
+  pm: false,
+  re: false,
+  fm: false,
+  call: false,
+  sd: false,
+  sol: false,
+  takec: false,
+  check: false,
+};
+
+// Reducer function
+const reducer = (state, action) => {
+  switch (action.type) {
+    case actionTypes.SET_HOSPITAL:
+      return { ...state, hospital: action.payload };
+    case actionTypes.SET_PROVINCE:
+      return { ...state, province: action.payload };
+    default:
+      return state;
+  }
+};
+
+export default function About() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const { hospital } = {}
+
+  // Usage example
+  const handleHospitalChange = (e) => {
+    dispatch({ type: actionTypes.SET_HOSPITAL, payload: e.target.value });
+  };
+
+  const handleProvinceChange = (e) => {
+    dispatch({ type: actionTypes.SET_PROVINCE, payload: e.target.value });
+  };
+
+  // Handlers for checkbox changes
+  const handleCheckboxChange = (name) => (e) => {
+    dispatch({ type: name, payload: e.target.checked });
+  };
+
   return (
-    <Box
-      component="form"
-      sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' },
-      }}
-      noValidate
-      autoComplete="off"
-    >
-      <div>
-        <TextField
-          required
-          id="outlined-required"
-          label="Required"
-          defaultValue="Hello World"
-        />
-        <TextField
-          disabled
-          id="outlined-disabled"
-          label="Disabled"
-          defaultValue="Hello World"
-        />
-        <TextField
-          id="outlined-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-        />
-        <TextField
-          id="outlined-read-only-input"
-          label="Read Only"
-          defaultValue="Hello World"
-          InputProps={{
-            readOnly: true,
-          }}
-        />
-        <TextField
-          id="outlined-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-        />
-        <TextField id="outlined-search" label="Search field" type="search" />
-        <TextField
-          id="outlined-helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          helperText="Some important text"
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="filled-required"
-          label="Required"
-          defaultValue="Hello World"
-          variant="filled"
-        />
-        <TextField
-          disabled
-          id="filled-disabled"
-          label="Disabled"
-          defaultValue="Hello World"
-          variant="filled"
-        />
-        <TextField
-          id="filled-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          variant="filled"
-        />
-        <TextField
-          id="filled-read-only-input"
-          label="Read Only"
-          defaultValue="Hello World"
-          InputProps={{
-            readOnly: true,
-          }}
-          variant="filled"
-        />
-        <TextField
-          id="filled-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="filled"
-        />
-        <TextField
-          id="filled-search"
-          label="Search field"
-          type="search"
-          variant="filled"
-        />
-        <TextField
-          id="filled-helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          helperText="Some important text"
-          variant="filled"
-        />
-      </div>
-      <div>
-        <TextField
-          required
-          id="standard-required"
-          label="Required"
-          defaultValue="Hello World"
-          variant="standard"
-        />
-        <TextField
-          disabled
-          id="standard-disabled"
-          label="Disabled"
-          defaultValue="Hello World"
-          variant="standard"
-        />
-        <TextField
-          id="standard-password-input"
-          label="Password"
-          type="password"
-          autoComplete="current-password"
-          variant="standard"
-        />
-        <TextField
-          id="standard-read-only-input"
-          label="Read Only"
-          defaultValue="Hello World"
-          InputProps={{
-            readOnly: true,
-          }}
-          variant="standard"
-        />
-        <TextField
-          id="standard-number"
-          label="Number"
-          type="number"
-          InputLabelProps={{
-            shrink: true,
-          }}
-          variant="standard"
-        />
-        <TextField
-          id="standard-search"
-          label="Search field"
-          type="search"
-          variant="standard"
-        />
-        <TextField
-          id="standard-helperText"
-          label="Helper text"
-          defaultValue="Default Value"
-          helperText="Some important text"
-          variant="standard"
-        />
-      </div>
-    </Box>
+    <div>
+      <TextField
+        id="outlined-basic-hospital"
+        label="โรงพยาบาล"
+        value={hospital}
+        variant="outlined"
+      />
+    </div>
   );
 }
