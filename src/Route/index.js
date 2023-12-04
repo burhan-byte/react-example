@@ -10,6 +10,7 @@ import Bar from "../Component/Web/Bar";
 import Side from "../Page/Side";
 import Sine from "../Page/Sine";
 import { Box } from "@mui/material";
+import Chao from "../Page/Chao";
 
 
 
@@ -31,6 +32,8 @@ export default function RoutePage() {
       <Route path="/sing" element={<Sing />} />
       <Route path="/side" element={<Side />} />
       <Route path="/sine" element={<Sine />} />
+      <Route path="/chao" element={<Chao />} />
+
     </Routes>
     </Box>
    </>

@@ -3,7 +3,7 @@ import { Grid, Typography } from '@mui/material';
 
 export default function Sing() {
   return (
-    <Grid container justifyContent="center" mt={20} style={{ height: '100vh' }}>
+    <Grid container justifyContent="center" mt={20} style={{ height: '200vh' }}>
       <Grid item xs={12} md={6} lg={15} style={{ position: 'relative' }}>
         <img
           src="https://images.pexels.com/photos/6984992/pexels-photo-6984992.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -37,3 +37,5 @@ export default function Sing() {
     </Grid>
   );
 }
+
+
