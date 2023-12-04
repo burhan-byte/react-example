@@ -1,107 +1,104 @@
-
-// import React, { useState, useReducer } from 'react';
-
-// const initialTodos = [
-//     {
-//         id: 1,
-//         title: "Todo 1",
-//         complete: false,
-//     },
-//     {
-//         id: 2,
-//         title: "Todo 2",
-//         complete: false,
-//     }
-
-// ]
-
-// const reducer = (state, action) => {
-//     switch (action.type) {
-//         case "COMPLETE":
-//             return state.map((check) => {
-//                 if (check.id === action.id) {
-//                     return { ...check, complete: !check.complete }
-//                 } else {
-//                     return check;
-//                 }
-//             })
-//         default:
-//             return state;
-//     }
-// }
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Button from '@mui/material/Button';
+import Avatar from '@mui/material/Avatar';
+import ListItem from '@mui/material/ListItem';
+import ListItemAvatar from '@mui/material/ListItemAvatar';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemText from '@mui/material/ListItemText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from '@mui/material/Dialog';
+import AddIcon from '@mui/icons-material/Add';
+import TextField from '@mui/material/TextField';
+import MenuItem from '@mui/material/MenuItem';
+import Box from '@mui/material/Box';
 
 
-// export default function Chao() {
+function SimpleDialog(props) {
+  const { onClose, selectedValue, open } = props;
 
-//     const [todos, dispath] = useReducer(reducer, initialTodos);
-//     const handleComplete = (check) => {
-//         dispath({ type: "COMPLETE", id: check.id });
+  const handleClose = () => {
+    onClose(selectedValue);
+  };
 
-//     }
-//     console.log(todos);
-
-//     return (
-//         <div>
-//             {todos.map((check) => (
-//                 <div key={check.id}>
-//                     <input type="checkbox" checked={check.complete} onChange={() => handleComplete(check)} />
-//                     {check.title}
-
-//                 </div>
-//             ))}
-//         </div>
-//     )
-// }
-
-
-import { useReducer } from 'react';
-
-function reducer(state, action) {
-  switch (action.type) {
-    case 'incremented_age': {
-      return {
-        name: state.name,
-        age: state.age + 1
-      };
-    }
-    case 'changed_name': {
-      return {
-        name: action.nextName,
-        age: state.age
-      };
-    }
-  }
-  throw Error('Unknown action: ' + action.type);
-}
-
-const initialState = { name: 'Taylor', age: 42 };
-
-export default function Form() {
-  const [state, dispatch] = useReducer(reducer, initialState);
-
-  function handleButtonClick() {
-    dispatch({ type: 'incremented_age' });
-  }
-  console.log(state);
-
-  function handleInputChange(e) {
-    dispatch({
-      type: 'changed_name',
-      nextName: e.target.value
-    }); 
-  }
+  const handleListItemClick = (value) => {
+    onClose(value);
+  };
 
   return (
-    <>
-      <input
-        value={state.name}
-        onChange={handleInputChange}
-      />
-      <button onClick={handleButtonClick}>
-        Increment age
-      </button>
-      <p>Hello, {state.name}. You are {state.age}.</p>
-    </>
+    <Dialog onClose={handleClose} open={open}>
+       <Box
+      component="form"
+      sx={{
+        '& .MuiTextField-root': { m: 1, width: '25ch' },
+      }}
+      noValidate
+      autoComplete="off"
+    >
+      <div>
+        <TextField
+          id="outlined-select-currency"
+          select
+          label="Select"
+          defaultValue="EUR"
+          helperText="Please select your currency"
+        >
+          {/* {currencies.map((option) => (
+            <MenuItem key={option.value} value={option.value}>
+              {option.label}
+            </MenuItem>
+          ))} */}
+          <ListItem disableGutters>
+          <ListItemButton
+            autoFocus
+            onClick={() => handleListItemClick('addAccount')}
+          >
+            <ListItemAvatar>
+              <Avatar>
+                <AddIcon />
+              </Avatar>
+            </ListItemAvatar>
+            <ListItemText primary="Add account" />
+          </ListItemButton>
+        </ListItem>
+          </TextField>
+          
+          </div>
+          </Box>
+    </Dialog>
   );
 }
 
+SimpleDialog.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  open: PropTypes.bool.isRequired,
+ 
+};
+
+export default function Chao() {
+  const [open, setOpen] = React.useState(false);
+ 
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (value) => {
+    setOpen(false);
+   
+  };
+
+  return (
+    <div>
+      <br />
+      <Button variant="outlined" onClick={handleClickOpen}>
+        Open simple dialog
+      </Button>
+      <SimpleDialog
+        selectedValue
+        open={open}
+        onClose={handleClose}
+      />
+    </div>
+  );
+}
