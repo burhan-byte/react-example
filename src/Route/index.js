@@ -12,24 +12,8 @@ import { Box } from "@mui/material";
 import Chao from "../Page/Chao";
 import Sine from "../Page/Sine";
 
-// import { CreateStore, applyMiddleware } from "redux";
-// import thunk from "redux-thunk";
-// import { Provider } from "react-redux";
-// import Reducers from "../Reducers";
-// import logger from "redux-logger";
 
 
-// const store = CreateStore(Reducers,applyMiddleware(thunk,logger));
-
-// const ReduxApp = (
-//   <Provider store={store}>
-//     <App/>
-
-
-//   </Provider>
-// )
-
-// ReactDOM.render(ReduxApp,document.getElementById('root'));
 
 export default function RoutePage() {
   
@@ -51,6 +35,7 @@ export default function RoutePage() {
       <Route path="/side" element={<Side />} />
       <Route path="/sine" element={<Sine />} />
       <Route path="/chao" element={<Chao />} />
+      
 
     </Routes>
     </Box>
