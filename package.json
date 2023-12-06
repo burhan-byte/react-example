@@ -19,12 +19,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.0.1",
     "react-router-dom": "^6.18.0",
-<<<<<<< HEAD
     "react-scripts": "5.0.1",
-=======
-    "react-scripts": "^5.0.1",
-    "redux": "^5.0.0",
->>>>>>> 05e41c8c0589983550c38da99471c5a994c477f4
     "redux-logger": "^3.0.6",
     "redux-thunk": "^3.1.0",
     "styled-components": "^6.1.1",
