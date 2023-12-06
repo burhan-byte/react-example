@@ -9,7 +9,9 @@ import Bar from "../Component/Web/Bar";
 import Side from "../Page/Side";
 import Profile from "../Page/Profile";
 import { Box } from "@mui/material";
-import Logout from "../Component/Logout/Logout";
+import Chao from "../Page/Chao";
+import Sine from "../Page/Sine";
+
 
 
 
@@ -23,18 +25,18 @@ export default function RoutePage() {
     </Routes>
     <>
 
-    <Logout/>
+    <Bar/>
     <Box  sx={{ mt:10  }}>
     <Routes>
       {/* <Route path="/" element={<Login1 />} /> */}
       {/* <Route path="/login2" element={<Login2 />} /> */}
       <Route path="/home" element={<Home/>} />
-      <Route path="/logout" element={<Logout />} />
-      <Route path="/Sing" element={<Sing />} />
-      <Route path="/Side" element={<Side />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/bar" element={<Bar />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/sing" element={<Sing />} />
+      <Route path="/side" element={<Side />} />
+      <Route path="/sine" element={<Sine />} />
+      <Route path="/chao" element={<Chao />} />
+      
+
     </Routes>
     </Box>
    </>
