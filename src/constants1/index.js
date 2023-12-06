@@ -2,10 +2,16 @@ export const APP_INIT = "APP_INIT";
 
 
 
+//login
+export const HTTP_REGISTERSTAR_FETCHING = 'HTTP_REGISTERSTAR_FETCHING'
+export const HTTP_REGISTERSTAR_SUCCESS = 'HTTP_REGISTERSTAR_SUCCESS'
+export const HTTP_REGISTERSTAR_FAILED = 'HTTP_REGISTERSTAR_FAILED'
 
-export const NETWORK_CONNECTION_MESSAGE = 'Cannot connect to server, plaease try again.'
-export const NETWORE_TIMOUT_MESSAGE = 'A network timeout has occurred, plaease try again.'
-export const UPLOAD_PHOTO_FAIL_MESSAGE = 'An error occurred. the phptp was unable to up'
+//profile 
+export const HTTP_PROFILE_FETCHING = 'HTTP_PROFILE_FETCHING'
+export const HTTP_PROFILE_SUCCESS = 'HTTP_PROFILE_SUCCESS'
+export const HTTP_PROFILE_FAILED = 'HTTP_PROFILE_FAILED'
+
 
 
 export const YES = 'YES'
@@ -23,3 +29,4 @@ export const server = {
     LOGIN_PASSED : 'yes',
 
 }
+
