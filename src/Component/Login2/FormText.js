@@ -1,46 +1,61 @@
-import React, { useState } from 'react';
-import { Grid, Paper, TextField, Button, Typography, InputAdornment, IconButton } from '@mui/material';
-import { Visibility, VisibilityOff, AccountCircle,} from '@mui/icons-material';
-import { useNavigate } from 'react-router-dom';
-
-
-
-
+import React, { useState } from "react";
+import {
+  Grid,
+  Paper,
+  TextField,
+  Button,
+  Typography,
+  InputAdornment,
+  IconButton,
+} from "@mui/material";
+import { Visibility, VisibilityOff, AccountCircle } from "@mui/icons-material";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import * as actionLogin from "../../action1/login.action";
 
 const FormText = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [errorUserName, setErrorUserName] = useState('');
-  const [errorPassword, setErrorPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [errorUserName, setErrorUserName] = useState("");
+  const [errorPassword, setErrorPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = () => {
-
-// console.log(username);
-// console.log(password);
-if(username==="test" && password==="test"){
-console.log("test")
-localStorage.setItem('token',1)
-navigate("/home")
-}else{
-console.log("fail")
-}
-    
+    const values = {
+      username: username,
+      password: password,
+    };
+    dispatch(actionLogin.login(values, navigate));
+    // console.log(username);
+    // console.log(password);
+    // if (username === "test" && password === "test") {
+    //   console.log("test");
+    //   localStorage.setItem("token", 1);
+    //   navigate("/home");
+    // } else {
+    //   console.log("fail");
+    // }
   };
 
   return (
-    <Grid container justifyContent="center" alignItems="center" style={{ height: '100vh' }}>
+    <Grid
+      container
+      justifyContent="center"
+      alignItems="center"
+      style={{ height: "100vh" }}
+    >
       <Grid item xs={12} md={6} lg={5}>
         <Paper
           sx={{
             padding: 2,
-            textAlign: 'center',
-            backgroundColor: '#ffff',
-            borderRadius: '5px',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
+            textAlign: "center",
+            backgroundColor: "#ffff",
+            borderRadius: "5px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
           }}
         >
           <Typography variant="h6" gutterBottom>
@@ -57,7 +72,7 @@ console.log("fail")
               fullWidth
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              error={errorUserName !== ''}
+              error={errorUserName !== ""}
               helperText={errorUserName}
               InputProps={{
                 endAdornment: (
@@ -71,13 +86,13 @@ console.log("fail")
             />
             <TextField
               label="Password"
-              type={showPassword ? 'text' : 'password'}
+              type={showPassword ? "text" : "password"}
               variant="outlined"
               margin="normal"
               fullWidth
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              error={errorPassword !== ''}
+              error={errorPassword !== ""}
               helperText={errorPassword}
               InputProps={{
                 endAdornment: (
@@ -89,7 +104,13 @@ console.log("fail")
                 ),
               }}
             />
-            <Button variant="contained" color="primary" fullWidth onClick={handleLogin} style={{ backgroundColor: 'HotPink' }}>
+            <Button
+              variant="contained"
+              color="primary"
+              fullWidth
+              onClick={handleLogin}
+              style={{ backgroundColor: "HotPink" }}
+            >
               Log in
             </Button>
           </form>
@@ -98,18 +119,26 @@ console.log("fail")
       <Grid item xs={12} md={6} lg={5}>
         {/* Content for the second column goes here */}
         <img
-          src= "https://www.eeci.or.th/wp-content/uploads/2021/07/09-Medical-Devices_1.png"
+          src="https://www.eeci.or.th/wp-content/uploads/2021/07/09-Medical-Devices_1.png"
           alt="A beautiful landscape"
-          style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            borderRadius: "8px",
+          }}
         />
-        <Typography variant="h5" gutterBottom style={{ textAlign: 'center', marginTop: '20px' }}>
+        <Typography
+          variant="h5"
+          gutterBottom
+          style={{ textAlign: "center", marginTop: "20px" }}
+        >
           Hi, Welcome
         </Typography>
-        <Typography variant="h6" gutterBottom style={{ textAlign: 'center' }}>
+        <Typography variant="h6" gutterBottom style={{ textAlign: "center" }}>
           Hi, Welcome back. Enter your credentials to continue
         </Typography>
       </Grid>
-
     </Grid>
   );
 };
@@ -118,8 +147,8 @@ export default FormText;
 
 // import React, { Component } from "react";
 // import { connect } from "react-redux";
-// import { httpClient } from './../../utils/HttpClient'; 
-// import { server } from '../../constant'; 
+// import { httpClient } from './../../utils/HttpClient';
+// import { server } from '../../constant';
 // import { register } from '../../constants/action.constant';
 // import {
 //   Grid,
@@ -131,7 +160,6 @@ export default FormText;
 //   IconButton,
 // } from '@mui/material';
 // import { AccountCircle, Visibility, VisibilityOff } from '@mui/icons-material';
-
 
 // class Register extends Component  {
 //   constructor(props) {
@@ -256,7 +284,6 @@ export default FormText;
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Register);
 
-
 // import React, { Component } from "react";
 // import { connect } from "react-redux";
 // // import axios from "axios";
@@ -271,7 +298,6 @@ export default FormText;
 //       password: ""
 //     };
 //   }
-  
 
 //   showError = () => {
 //     return (
@@ -291,7 +317,7 @@ export default FormText;
 //           </a>
 //         </div>
 //         {/* /.login-logo */}
-//         <div 
+//         <div
 //         style={{background: "whitesmoke", borderRadius: 10}}
 //         className="login-box-body">
 //           <p className="login-box-msg">Sign in to start your session</p>
@@ -317,7 +343,6 @@ export default FormText;
 
 //             {this.props.loginReducer.isError ? this.showError() : null }
 
-  
 //             {/* Login */}
 //             <div className="row">
 //               <div className="col-xs-12">
@@ -356,7 +381,6 @@ export default FormText;
 //     );
 //   }
 // }
-
 
 // const mapStateToProps = ({ registerReducer }) => ({ registerReducer });
 
