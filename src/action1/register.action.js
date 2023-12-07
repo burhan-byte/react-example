@@ -1,4 +1,4 @@
-import { HTTP_REGISTERSTAR_FETCHING, HTTP_REGISTERSTAR_SUCCESS, HTTP_REGISTERSTAR_FAILED } from './constants'
+import { HTTP_REGISTERSTAR_FETCHING, HTTP_REGISTERSTAR_SUCCESS, HTTP_REGISTERSTAR_FAILED } from "../constants1"
 
 
 export const setRegisterStateToFetching = () => ({
@@ -13,6 +13,7 @@ export const setRegisterStateToSuccess = (payload) => ({
 export const setRegisterStateToFailed = () => ({
   type: HTTP_REGISTERSTAR_FAILED,
 })
+
 
 export const connects = (history, credentail)=>{
     return dispatch=>{

@@ -1,4 +1,4 @@
-import { HTTP_REGISTERSTAR_FETCHING, HTTP_REGISTERSTAR_SUCCESS, HTTP_REGISTERSTAR_FAILED } from './constants';
+import { HTTP_REGISTERSTAR_FETCHING, HTTP_REGISTERSTAR_SUCCESS, HTTP_REGISTERSTAR_FAILED } from "../constants1"
 
 
 const initialState = {
@@ -7,7 +7,7 @@ const initialState = {
   isError: false,
 };
 
-const constants = (state = initialState, { type, payload }) => {
+const constants1 = (state = initialState, { type, payload }) => {
   switch (type) {
     case HTTP_REGISTERSTAR_FETCHING:
       return { ...state, result: null, isFetching: true, isError: false };
@@ -20,4 +20,4 @@ const constants = (state = initialState, { type, payload }) => {
   }
 };
 
-export default constants; 
+export default constants1; 

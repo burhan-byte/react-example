@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -7,20 +7,32 @@ import { BrowserRouter } from "react-router-dom";
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from "react-redux";
 import logger from "redux-logger";
-import rootReducer from './reducers'; 
 import { thunk } from "redux-thunk";
+import reducers from "./reducer1"
+import { Button } from "bootstrap";
+// import constants1 from "./reducer1/register.reducer";
 
-const store = createStore(rootReducer, applyMiddleware(thunk,logger));
 
-const ReduxApp = (
-  <Provider store={store}>
+var middlewares = (middlewares = applyMiddleware(thunk, logger));
+
+const store = createStore(reducers, middlewares);
+
+// const myButton = new Button();
+// const store = createStore(applyMiddleware(thunk,logger));
+const root = ReactDOM.createRoot(document.getElementById("root"))
+
+root.render(
+  <React.StrictMode>
     <BrowserRouter>
+      <Provider store={store}>
       <App />
+      </Provider>
     </BrowserRouter>
-  </Provider>
+    </React.StrictMode>
+    
 );
 
-ReactDOM.render(ReduxApp, document.getElementById('root'));
+
 
 reportWebVitals();
 
