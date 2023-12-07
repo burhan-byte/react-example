@@ -4,6 +4,10 @@ import { Visibility, VisibilityOff, AccountCircle, KeyboardControlKeyOutlined } 
 import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/system';
 
+
+
+
+
 const StyledPaper = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(2),
   textAlign: 'center',
@@ -43,7 +47,7 @@ const FormText = () => {
     if (username === 'Nurda' && password === '1234') {
       console.log('Nurda');
       localStorage.setItem('token', 1);
-      navigate('/Sine');
+      navigate('/Sing');
     } else {
       console.log('fail');
     }
@@ -125,6 +129,265 @@ const FormText = () => {
 };
 
 export default FormText;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { Component } from "react";
+// import { Grid, Paper, TextField, Button, Typography, InputAdornment, IconButton } from '@mui/material';
+// import { Visibility, VisibilityOff, AccountCircle, KeyboardControlKeyOutlined } from '@mui/icons-material';
+// import { useNavigate } from 'react-router-dom';
+// import { styled } from '@mui/system';
+// import { FormText } from "./../../actions/FormText.action";
+// import { connect } from "react-redux";
+
+// const StyledPaper = styled(Paper)(({ theme }) => ({
+//   padding: theme.spacing(2),
+//   textAlign: 'center',
+//   backgroundColor: '#fff', 
+//   borderRadius: '5px',
+//   display: 'flex',
+//   flexDirection: 'column',
+//   justifyContent: 'center',
+//   boxShadow: '0 5px 10px rgba(0, 0, 0, 0.1)', 
+// }));
+
+
+// const StyledTextField = styled(TextField)(({ theme }) => ({
+//   marginBottom: theme.spacing(2),
+// }));
+
+// const StyledButton = styled(Button)(({ theme }) => ({
+//   backgroundColor: '#FF6666', 
+//   color: '#fff',
+//   '&:hover': {
+//     backgroundColor: '#FFCCFF',
+//   },
+//   marginTop: theme.spacing(2), 
+// }));
+
+// class FormText extends Component {
+//   constructor(props) {
+//     super(props);
+//     this.state = {
+//       username: "",
+//       password: "",
+//       showPassword: false,
+//     };
+//   }
+
+//   componentDidMount() {
+//     this.props.autoFormText(this.props.history);
+//   }
+  
+
+
+//   render() {
+//     const { username, password, showPassword } = this.state;
+//   return (
+//     <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
+//       <Grid item xs={12} md={6} lg={5}>
+//         <StyledPaper>
+//         <Typography variant="h6" gutterBottom style={{ fontWeight: 'bold', color: '#333' }}>
+//   Hi, Welcome to BPL PATHOLOGIST
+// </Typography>
+// <Typography variant="subtitle1" gutterBottom style={{ color: '#555' }}>
+//   Enter your credentials to continue
+// </Typography>
+
+//           <form>
+//             <StyledTextField
+//              label="Username"
+//              variant="outlined"
+//              margin="normal"
+//              fullWidth
+//              value={username}
+//              onChange={(e) => this.setState({ username: e.target.value })}
+             
+//            />
+//                   {/* <InputAdornment position="end">
+//                     <IconButton>
+//                       <AccountCircle />
+//                     </IconButton>
+//                   </InputAdornment> */}
+                
+//             <StyledTextField
+              
+//               label="Password"
+//               type={showPassword ? 'text' : 'password'}
+//               variant="outlined"
+//               margin="normal"
+//               fullWidth
+//               value={password}
+//               onChange={(e) => this.setState({ password: e.target.value })}
+              
+//             />
+//                   {/* <InputAdornment position="end">
+//                     <IconButton onClick={() => setShowPassword(!showPassword)}>
+//                       {showPassword ? <Visibility /> : <VisibilityOff />}
+//                     </IconButton>
+//                   </InputAdornment> */}
+               
+//                   <StyledButton variant="contained" fullWidth onClick={this.handleLogin}>
+//               Log in
+//             </StyledButton>
+//           </form>
+//         </StyledPaper>
+//       </Grid>
+//       <Grid item xs={12} md={6} lg={5}>
+//         <img
+//   src="https://i0.wp.com/rayhaber.com/wp-content/uploads/2021/02/ikinci-el-tibbi-cihaz-alirken-nelere-dikkat-edilir.jpg?resize=678%2C381&ssl=1"
+//   alt="A beautiful landscape"
+//   style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+// />
+
+//         <Typography variant="h5" gutterBottom style={{ textAlign: 'center', marginTop: '5px' }}>
+//           Hi, Welcome
+//         </Typography>
+//         <Typography variant="h6" gutterBottom style={{ textAlign: 'center' }}>
+//           Hi, Welcome back. To Logins Medical
+//         </Typography>
+//       </Grid>
+//     </Grid>
+//   );
+// }
+// }
+
+// const mapStateToProps = ({FormTextReducers}) => ({ FormTextReducers })
+
+// const mapDispatchToProps = {
+//   FormText
+
+// }
+
+// export default connect(mapStateToProps, mapDispatchToProps)(FormText)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -243,6 +506,17 @@ export default FormText;
 // }
 
 // export default connect(mapStateToProps, mapDispatchToProps)(Login)
+
+
+
+
+
+
+
+
+
+
+
 
 
 // import React, { Component } from "react";
