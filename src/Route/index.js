@@ -5,7 +5,7 @@ import Login2 from "../Page/Login222";
 import Home from "../Page/Home";
 import Sing from "../Page/Sing"
 import About from "../Page/About";
-// import Bar from "../Component/Web/Bar";
+import Bar from "../Component/Web/Bar";
 import Side from "../Page/Side";
 import Profile from "../Page/Profile";
 import { Box } from "@mui/material";
@@ -26,7 +26,7 @@ export default function RoutePage() {
     </Routes>
     <> */}
 
-    <Logout/>
+    <Bar/>
     <Box  sx={{ mt:10  }}>
     <Routes>
       <Route path="/" element={<Login1 />} />

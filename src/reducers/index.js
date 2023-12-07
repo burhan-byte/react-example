@@ -1,12 +1,12 @@
 import { combineReducers } from "redux";
-// import FormTextReducers from './FormText.reducer'
+import FormTextReducer from './FormText.reducer'
 import sideReducer from './side.reducers'
 import singReducer from "./sing.reducers";
 
 
 
 export default combineReducers({
-    // FormTextReducers, 
+    FormTextReducer, 
     singReducer,
     sideReducer,
     // stockReducer, 

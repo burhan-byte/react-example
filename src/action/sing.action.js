@@ -1,24 +1,25 @@
-import { HTTP_SING_FETCHING, HTTP_SING_SUCCESS, HTTP_SING_FAILED} from "../Constants"
+import { SING_FETCHING, SING_SUCCESS, SING_FAILED} from "../Constants"
 
 
 
 export const setSingStateToFetching = () => ({
-  type: HTTP_SING_FETCHING  ,
+  type: SING_FETCHING  ,
   
 })
  export const setSingStateToSuccess = (payload) => ({
-   type: HTTP_SING_SUCCESS,
+   type: SING_SUCCESS,
    payload
  })
  
  export const setSingStateToFailed = (payload) => ({
-   type:  HTTP_SING_FAILED,
+   type:  SING_FAILED,
    payload
  })
  
- export const connects= (history, Credential)=>{
+ export const connects= (history)=>{
   return dispatch=>{
-    dispatch(setSingStateToFetching())
+    dispatch(setSingStateToFetching());
+    
     setTimeout(()=>{
       dispatch(setSingStateToSuccess({result: "ok"}))
     },3000)

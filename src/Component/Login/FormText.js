@@ -3,9 +3,8 @@ import { Grid, Paper, TextField, Button, Typography, InputAdornment, IconButton 
 import { Visibility, VisibilityOff, AccountCircle, KeyboardControlKeyOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/system';
-
-
-
+import * as actionFormText from "../../action/formText.action";
+import { useDispatch } from 'react-redux';
 
 
 const StyledPaper = styled(Paper)(({ theme }) => ({
@@ -35,23 +34,43 @@ const StyledButton = styled(Button)(({ theme }) => ({
 
 
 const FormText = () => {
+
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorUserName, setErrorUserName] = useState('');
   const [errorPassword, setErrorPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
-  
 
   const handleLogin = () => {
-    if (username === 'Nurda' && password === '1234') {
-      console.log('Nurda');
-      localStorage.setItem('token', 1);
-      navigate('/Sing');
-    } else {
-      console.log('fail');
-    }
+    const values = {
+      username: username,
+      password: password,
+    };
+    dispatch(actionFormText.FormText(values, navigate));
+
+    // console.log(username);
+    // console.log(password);
+    // if (username === "test" && password === "test") {
+    //   console.log("test");
+    //   localStorage.setItem("token", 1);
+    //   navigate("/home");
+    // } else {
+    //   console.log("fail");
+    // }
   };
+  
+
+  // const handleLogin = () => {
+  //   if (username === 'Nurda' && password === '1234') {
+  //     console.log('Nurda');
+  //     localStorage.setItem('token', 1);
+  //     navigate('/Sing');
+  //   } else {
+  //     console.log('fail');
+  //   }
+  // };
 
   return (
     <Grid container justifyContent="center" alignItems="center" style={{ minHeight: '100vh' }}>
