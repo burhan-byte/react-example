@@ -1,30 +1,43 @@
-import { HTTP_SIDE_FETCHING, HTTP_SIDE_SUCCESS, HTTP_SIDE_FAILED} from "../Constants"
-
-
+import axios from "axios";
+import { SIDE_FETCHING, SIDE_SUCCESS, SIDE_FAILED} from "../Constants"
+import { SERVER , TOKEN} from "../Constants"
 
 export const setSideStateToFetching = () => ({
-  type: HTTP_SIDE_FETCHING  ,
-  
+  type: SIDE_FETCHING,
 })
- export const setSideStateToSuccess = (payload) => ({
-   type: HTTP_SIDE_SUCCESS,
-   payload
- })
+
+export const setSideStateToSuccess = (payload) => ({
+  type:SIDE_SUCCESS,
+  payload
+})
+
+export const setSideStateToFailed = () => ({
+  type: SIDE_FAILED,
+})
+
+
+  export const Side = (valuesside) => {
+    return async (dispatch) => {
+      dispatch(setSideStateToFetching());
+      console.log(valuesside); // show test
+
+      const token = localStorage.getItem(TOKEN);
+      const config = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
  
- export const setSideStateToFailed = (payload) => ({
-   type:  HTTP_SIDE_FAILED,
-   payload
- })
- 
- export const connects= (history, Credential)=>{
-  return dispatch=>{
-    dispatch(setSideStateToFetching())
-    setTimeout(()=>{
-      dispatch(setSideStateToSuccess({result: "ok"}))
-    },3000)
-    // dispatch(setFormTextStateToFailed())
-
-
-  }
-
- }
+      await axios.post(SERVER + "hospital/equipment/create", valuesside, config).then((result) => {
+        console.log(result);
+      const { data } = result;
+        console.log(data);
+      if (data.status === "success") {
+        dispatch(setSideStateToSuccess(data.result));
+        // localStorage.setItem(data);
+      } else {
+        dispatch(setSideStateToFailed());
+      }
+    });
+    }
+    };

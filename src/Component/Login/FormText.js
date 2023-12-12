@@ -3,8 +3,8 @@ import { Grid, Paper, TextField, Button, Typography, InputAdornment, IconButton 
 import { Visibility, VisibilityOff, AccountCircle, KeyboardControlKeyOutlined } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/system';
-import * as actionFormText from "../../action/formText.action";
 import { useDispatch } from 'react-redux';
+import * as actionFormText from "../../action/formText.action"
 
 
 const StyledPaper = styled(Paper)(({ theme }) => ({

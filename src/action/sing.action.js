@@ -3,7 +3,7 @@ import { SING_FETCHING, SING_SUCCESS, SING_FAILED} from "../Constants"
 
 
 export const setSingStateToFetching = () => ({
-  type: SING_FETCHING  ,
+  type: SING_FETCHING,
   
 })
  export const setSingStateToSuccess = (payload) => ({
@@ -11,19 +11,16 @@ export const setSingStateToFetching = () => ({
    payload
  })
  
- export const setSingStateToFailed = (payload) => ({
-   type:  SING_FAILED,
-   payload
+ export const setSingStateToFailed = () => ({
+   type: SING_FAILED,
  })
  
- export const connects= (history)=>{
-  return dispatch=>{
+ export const Sign= (valuessing)=>{
+  return async(dispatch)=>{
+    console.log(valuessing);
     dispatch(setSingStateToFetching());
-    
-    setTimeout(()=>{
-      dispatch(setSingStateToSuccess({result: "ok"}))
-    },3000)
-    // dispatch(setFormTextStateToFailed())
+    dispatch(setSingStateToSuccess({result: "ok"}))
+    dispatch(setSingStateToFailed())
 
 
   }

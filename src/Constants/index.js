@@ -7,6 +7,7 @@ export const TOKEN = "token";
 
 
 
+
 // Login Page
 export const FORMTEXT_FETCHING = "FORMTEXT_FETCHING";
 export const FORMTEXT_SUCCESS = "FORMTEXT_SUCCESS";
@@ -17,6 +18,6 @@ export const SING_FETCHING = "SING_FETCHING";
 export const SING_SUCCESS = "SING_SUCCESS";
 export const SING_FAILED = "SING_FAILED";
 
-export const HTTP_SIDE_FETCHING = "HTTP_SIDE_FETCHING";
-export const HTTP_SIDE_SUCCESS = "HTTP_SIDE_SUCCESS";
-export const HTTP_SIDE_FAILED = "HTTP_SIDE_FAILED";
+export const SIDE_FETCHING = "SIDE_FETCHING";
+export const SIDE_SUCCESS = "SIDE_SUCCESS";
+export const SIDE_FAILED = "SIDE_FAILED";

@@ -14,12 +14,12 @@ export default function Sine () {
     const navigate = useNavigate();
     const [hospitalname,setHospitalname] =useState([]);
     
-    // useEffect(() => {
-    //     axios.get('http://192.168.101.40:5000/api/test')
-    //     .then((response)=>{
-    //         const {data} =response;
-    //         setHospitalname(data.result);
-    //       })})
+    useEffect(() => {
+        axios.get('http://192.168.101.40:5000/api/test')
+        .then((response)=>{
+            const {data} =response;
+            setHospitalname(data.result);
+          })})
 
     //     const token = localStorage.getItem('token');
         
@@ -29,10 +29,10 @@ export default function Sine () {
     //     }
     // }, [navigate]);
 
-    // const logout = () => {
-    //     localStorage.removeItem('token');
-    //     navigate("/");
-    // };
+    const logout = () => {
+        localStorage.removeItem('token');
+        navigate("/");
+    };
 
    
     
@@ -40,10 +40,10 @@ export default function Sine () {
     console.log (rows)
   return (
     
-    <TableContainer component={Paper} sx={{ background: '#CC0033' }}>
+    <TableContainer component={Paper} sx={{ background: '#FFFFFF' }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
-          <TableRow>
+          <TableRow sx={{ background: '#FFCC99	' }}>
             <TableCell>Number</TableCell>
             <TableCell align="center">created_at</TableCell>
             <TableCell align="center">email</TableCell>
